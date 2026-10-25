@@ -27,7 +27,7 @@ class AuditTests(unittest.TestCase):
             seen.add(item["path"])
             path = (ROOT / item["path"]).resolve()
             self.assertTrue(path.is_relative_to(ROOT.resolve()))
-            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), item["sha256"])
+            self.assertEqual(hashlib.sha256(path.read_bytes()).hexdigest(), item["sha256"], item["path"])
 
     def test_export_does_not_corrupt_urls(self):
         for path in (ROOT / "research").rglob("*.py"):

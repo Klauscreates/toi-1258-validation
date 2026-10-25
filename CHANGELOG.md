@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.1 - 2026-10-25
+
+- Expanded project scripts, shared library, historical versions and manuscript sources.
+- Added source coverage checks and explicit records for empty original files.
+- Preserved LF text across operating systems so provenance hashes survive checkout.
+- Published private GitHub repositories; no scientific confirmation claim is implied.
+
 ## 0.1.0 - 2026-10-25
 
 - Curated historical measurements and reference source into a standalone project.

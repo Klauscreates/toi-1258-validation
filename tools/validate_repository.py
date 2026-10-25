@@ -10,7 +10,21 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 SKIP = {".git", ".venv", "__pycache__", "build", "dist", "results"}
 BLOCKED = {".fits", ".fit", ".fz", ".exe", ".dll", ".pfx", ".pem"}
-TEXT = {".py", ".md", ".json", ".csv", ".toml", ".cff", ".yml", ".yaml", ".txt"}
+TEXT = {
+    ".py",
+    ".md",
+    ".json",
+    ".csv",
+    ".toml",
+    ".cff",
+    ".yml",
+    ".yaml",
+    ".txt",
+    ".ps1",
+    ".sh",
+    ".tex",
+    ".bib",
+}
 
 
 def main() -> int:
