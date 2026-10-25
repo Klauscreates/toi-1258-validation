@@ -2,6 +2,7 @@
 
 import json
 import hashlib
+import math
 from pathlib import Path
 import subprocess
 import sys
@@ -46,7 +47,18 @@ class AuditTests(unittest.TestCase):
         summary, _ = analyze(ROOT / "data")
         summary["verified_provenance_files"] = verify_manifest(ROOT)
         expected = json.loads((ROOT / "examples/summary.json").read_text())
-        self.assertEqual(summary, expected)
+        self.assertEqual(summary.keys(), expected.keys())
+        for key, reference in expected.items():
+            actual = summary[key]
+            # Floating-point summation may differ by an ulp across platforms.
+            if isinstance(reference, float):
+                self.assertTrue(math.isclose(actual, reference, rel_tol=1e-12, abs_tol=0), key)
+            elif isinstance(reference, list):
+                self.assertEqual(len(actual), len(reference), key)
+                for value, target in zip(actual, reference):
+                    self.assertTrue(math.isclose(value, target, rel_tol=1e-12, abs_tol=0), key)
+            else:
+                self.assertEqual(actual, reference, key)
 
     def test_manifest(self):
         self.assertGreater(verify_manifest(ROOT), 5)

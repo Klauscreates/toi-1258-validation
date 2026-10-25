@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2 - 2026-10-25
+
+- Compare regenerated floating-point summaries with a strict 1e-12 relative
+  tolerance across platforms; provenance hashes remain exact.
+- No changes to inputs, probability calculations, or scientific conclusions.
+
 ## 0.1.1 - 2026-10-25
 
 - Expanded project scripts, shared library, historical versions and manuscript sources.
