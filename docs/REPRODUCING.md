@@ -42,14 +42,8 @@ The figure is regenerated from the same bundled tables. It is not an illustratio
 of a confirmed physical object. CI is configured for Windows and Linux on Python
 3.11 and 3.12; a configured matrix is not a claim that remote CI has already run.
 
-## Not yet supported end-to-end: raw-data reconstruction
+## FITS and historical software
 
-[Historical source](../research/README.md) records the original reduction logic.
-It requires external archives, calibration products, and domain software not
-bundled here. It is not executed by CI. Porting source paths alone does not make
-a scientifically validated raw-data pipeline.
-
-See [the data guide](DATA.md) for input products, units, and the work needed to
-complete raw-data reproducibility. Never describe this offline audit as a fresh
-DOLPHOT, SPHERE, or TRICERATOPS run.
-
+The [exact-input guide](RAW_REPRODUCTION.md) documents the newly executable
+core paths and the remaining unverified historical branches. These large local
+runs are separate from the lightweight CI audit.

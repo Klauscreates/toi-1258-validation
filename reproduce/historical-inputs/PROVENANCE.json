@@ -1,0 +1,42 @@
+[
+  {
+    "name": "288132261_TRILEGAL.csv",
+    "status": "PRESERVED",
+    "bytes": 83332,
+    "original_sha256": "2b26984bcd72e20dd6e10de629c76edc019b9a0d88aa422c969b800ca8c7558c",
+    "sha256": "2b26984bcd72e20dd6e10de629c76edc019b9a0d88aa422c969b800ca8c7558c",
+    "transformation": "Path sanitization only where applicable; numerical strings retained"
+  },
+  {
+    "name": "triceratops_folded_binned_lightcurve.csv",
+    "status": "PRESERVED",
+    "bytes": 12682,
+    "original_sha256": "1f87116e5984e612bcba6e70d6b10b6561695479f53b7b74272ed4371ecc55d7",
+    "sha256": "1f87116e5984e612bcba6e70d6b10b6561695479f53b7b74272ed4371ecc55d7",
+    "transformation": "Path sanitization only where applicable; numerical strings retained"
+  },
+  {
+    "name": "triceratops_sector14_searchradius2_stars.csv",
+    "status": "PRESERVED",
+    "bytes": 1028,
+    "original_sha256": "9e7802d102ba559c3acd90b2dd358f8aacc4314000fe7a7067ff73cbff7a6c26",
+    "sha256": "9e7802d102ba559c3acd90b2dd358f8aacc4314000fe7a7067ff73cbff7a6c26",
+    "transformation": "Path sanitization only where applicable; numerical strings retained"
+  },
+  {
+    "name": "triceratops_contrast_curve_832nm.csv",
+    "status": "PRESERVED",
+    "bytes": 1757,
+    "original_sha256": "5435a6cf44b2414aef09195dd0e896c8a96b18ecf247cc2cf3072ce4af83226d",
+    "sha256": "5435a6cf44b2414aef09195dd0e896c8a96b18ecf247cc2cf3072ce4af83226d",
+    "transformation": "Path sanitization only where applicable; numerical strings retained"
+  },
+  {
+    "name": "triceratops_contrast_curve_562nm.csv",
+    "status": "PRESERVED",
+    "bytes": 1763,
+    "original_sha256": "1cbd05b689873666c89a7b87830a0df4314ee386edfc7bd7d35c63906bf17485",
+    "sha256": "1cbd05b689873666c89a7b87830a0df4314ee386edfc7bd7d35c63906bf17485",
+    "transformation": "Path sanitization only where applicable; numerical strings retained"
+  }
+]

@@ -1,0 +1,8 @@
+triceratops==1.0.20
+numpy==2.4.6
+scipy==1.17.1
+pandas==2.3.3
+PyTransit==2.2.0
+numba==0.65.1
+lightkurve==2.6.0
+setuptools<81

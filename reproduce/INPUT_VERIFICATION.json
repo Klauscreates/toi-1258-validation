@@ -1,0 +1,123 @@
+{
+  "project": "toi-1258-validation",
+  "tested": 29,
+  "passed": 29,
+  "results": [
+    {
+      "path": "tess/tess2019198215352-s0014-0000000288132261-0150-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2019357164649-s0020-0000000288132261-0165-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2020020091053-s0021-0000000288132261-0167-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2020160202036-s0026-0000000288132261-0188-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2021175071901-s0040-0000000288132261-0211-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2021204101404-s0041-0000000288132261-0212-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2021364111932-s0047-0000000288132261-0218-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2022027120115-s0048-0000000288132261-0219-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2022164095748-s0053-0000000288132261-0226-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2022357055054-s0060-0000000288132261-0249-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2023341045131-s0073-0000000288132261-0268-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2024003055635-s0074-0000000288132261-0269-s_lc.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2019198215352-s0014-0000000288132261-0150-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2019357164649-s0020-0000000288132261-0165-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2020020091053-s0021-0000000288132261-0167-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2020160202036-s0026-0000000288132261-0188-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2021175071901-s0040-0000000288132261-0211-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2021204101404-s0041-0000000288132261-0212-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2021364111932-s0047-0000000288132261-0218-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2022027120115-s0048-0000000288132261-0219-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2022164095748-s0053-0000000288132261-0226-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2022357055054-s0060-0000000288132261-0249-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2023341045131-s0073-0000000288132261-0268-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "tess/tess2024003055635-s0074-0000000288132261-0269-s_tp.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "followup/fl.debias.st.0121.TIC288132261.01.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "followup/TIC0288132261S-ab20191220.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "followup/TIC0288132261S-ab20200104.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "followup/TOI1258I-ef20200215-562.fits",
+      "status": "PASS"
+    },
+    {
+      "path": "followup/TOI1258I-ef20200215-832.fits",
+      "status": "PASS"
+    }
+  ]
+}

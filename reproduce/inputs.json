@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "captured": "2026-10-25",
+  "project": "toi-1258-validation",
+  "scope": "Core retained inputs for the historical paths documented in RAW_REPRODUCTION.md; not every exploratory archive sweep",
+  "total_bytes": 605568960,
+  "inputs": [
+    {
+      "path": "tess/tess2019198215352-s0014-0000000288132261-0150-s_lc.fits",
+      "bytes": 1964160,
+      "sha256": "258095e1d46182a222f079fff40fd7dda098687f862104127a08e44a1cad0e5d",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2019198215352-s0014-0000000288132261-0150-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2019198215352-s0014-0000000288132261-0150-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2019357164649-s0020-0000000288132261-0165-s_lc.fits",
+      "bytes": 1926720,
+      "sha256": "a35626667576c6f5c374d9181e33ca60d2c4b4fc8ada7213ad8a806b9f020b1f",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2019357164649-s0020-0000000288132261-0165-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2019357164649-s0020-0000000288132261-0165-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2020020091053-s0021-0000000288132261-0167-s_lc.fits",
+      "bytes": 1998720,
+      "sha256": "fc8587eaa2459f5f34e2e43cbe5f4c0f0f24721764a1c882e148b3e6a989a7e7",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2020020091053-s0021-0000000288132261-0167-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2020020091053-s0021-0000000288132261-0167-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2020160202036-s0026-0000000288132261-0188-s_lc.fits",
+      "bytes": 1820160,
+      "sha256": "01db47c45440f1af144ca9e3d1936b536ecc74950fde70146e19418ba88ef0fe",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2020160202036-s0026-0000000288132261-0188-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2020160202036-s0026-0000000288132261-0188-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2021175071901-s0040-0000000288132261-0211-s_lc.fits",
+      "bytes": 2062080,
+      "sha256": "3db016701fe15e2b59f92a8a745d8972fa12c32f178525181eca8007f8e31708",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2021175071901-s0040-0000000288132261-0211-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2021175071901-s0040-0000000288132261-0211-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2021204101404-s0041-0000000288132261-0212-s_lc.fits",
+      "bytes": 1944000,
+      "sha256": "4c9bcca1cde132b53fdd8ea332c5f1b960bd85e82515175f076ed18aa810ec91",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2021204101404-s0041-0000000288132261-0212-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2021204101404-s0041-0000000288132261-0212-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2021364111932-s0047-0000000288132261-0218-s_lc.fits",
+      "bytes": 1984320,
+      "sha256": "52f67bf3002fa5e9b384c3a37c598bce906e99f2c9d54efdcf5b1009bc8086e7",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2021364111932-s0047-0000000288132261-0218-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2021364111932-s0047-0000000288132261-0218-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2022027120115-s0048-0000000288132261-0219-s_lc.fits",
+      "bytes": 2050560,
+      "sha256": "fb1da8bba0b199027c7127e2f311fcf2a8d411ccb6e732a35503ab72c94161ed",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2022027120115-s0048-0000000288132261-0219-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2022027120115-s0048-0000000288132261-0219-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2022164095748-s0053-0000000288132261-0226-s_lc.fits",
+      "bytes": 1828800,
+      "sha256": "fa7d444b7e9485b60af15ffa48c7fc5312046725ae71d9bca7f38e283dac9c8b",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2022164095748-s0053-0000000288132261-0226-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2022164095748-s0053-0000000288132261-0226-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2022357055054-s0060-0000000288132261-0249-s_lc.fits",
+      "bytes": 1880640,
+      "sha256": "c2bb6026dfd555807fc2327c6d0ce2a105385a8f965a2c666b70d105f3bf3da1",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2022357055054-s0060-0000000288132261-0249-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2022357055054-s0060-0000000288132261-0249-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2023341045131-s0073-0000000288132261-0268-s_lc.fits",
+      "bytes": 1964160,
+      "sha256": "f4741fa7cb1945e94f6528133cd7871a02ea01c856250d5ae090f90794f192d0",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2023341045131-s0073-0000000288132261-0268-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2023341045131-s0073-0000000288132261-0268-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2024003055635-s0074-0000000288132261-0269-s_lc.fits",
+      "bytes": 1952640,
+      "sha256": "5c78b3f10a8386309ae2ae8dba072da99ff0c6b805f19cff49dd97598312ce79",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2024003055635-s0074-0000000288132261-0269-s_lc.fits",
+      "archive_id": "mast:TESS/product/tess2024003055635-s0074-0000000288132261-0269-s_lc.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2019198215352-s0014-0000000288132261-0150-s_tp.fits",
+      "bytes": 47376000,
+      "sha256": "5838d4f8a7dacf4ce7e80b1ffb6ef846016916a4fab959b5d77ffe2c10698743",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2019198215352-s0014-0000000288132261-0150-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2019198215352-s0014-0000000288132261-0150-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2019357164649-s0020-0000000288132261-0165-s_tp.fits",
+      "bytes": 46437120,
+      "sha256": "d19a5ab3c739a3c7bfb4f3d584062865555df4eb0c9960f90b576194db93ecfa",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2019357164649-s0020-0000000288132261-0165-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2019357164649-s0020-0000000288132261-0165-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2020020091053-s0021-0000000288132261-0167-s_tp.fits",
+      "bytes": 48248640,
+      "sha256": "1a0dac24a79fe41d34632be54ab391665b352d14e8abcf5a8e2649848ea11774",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2020020091053-s0021-0000000288132261-0167-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2020020091053-s0021-0000000288132261-0167-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2020160202036-s0026-0000000288132261-0188-s_tp.fits",
+      "bytes": 43879680,
+      "sha256": "23eed0252a46f304342c891bff20336ba57338c3c9488afda1b5de2763d53847",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2020160202036-s0026-0000000288132261-0188-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2020160202036-s0026-0000000288132261-0188-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2021175071901-s0040-0000000288132261-0211-s_tp.fits",
+      "bytes": 49754880,
+      "sha256": "13ca0c649ad7048841ff631c598a05892d665da519abc25b7758c7b388fd69f8",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2021175071901-s0040-0000000288132261-0211-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2021175071901-s0040-0000000288132261-0211-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2021204101404-s0041-0000000288132261-0212-s_tp.fits",
+      "bytes": 46915200,
+      "sha256": "0227064e17f4edd75bff1eb240481d57bc891aa70db6b1a2aaf94160dd2c8573",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2021204101404-s0041-0000000288132261-0212-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2021204101404-s0041-0000000288132261-0212-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2021364111932-s0047-0000000288132261-0218-s_tp.fits",
+      "bytes": 47882880,
+      "sha256": "22ae514d35e5064687a021f61a510b2cb9c42091c90dd12bc125fcacc9955d78",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2021364111932-s0047-0000000288132261-0218-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2021364111932-s0047-0000000288132261-0218-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2022027120115-s0048-0000000288132261-0219-s_tp.fits",
+      "bytes": 49492800,
+      "sha256": "f5f2bb6f85f52a64dca7c44cc3519dd5b84258a23d89c85776e98c3ca673c50c",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2022027120115-s0048-0000000288132261-0219-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2022027120115-s0048-0000000288132261-0219-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2022164095748-s0053-0000000288132261-0226-s_tp.fits",
+      "bytes": 44084160,
+      "sha256": "aad61fd146b18b2df1c5edfffcf41bb02a38adcebf8f5618cbcf05e3a13907a5",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2022164095748-s0053-0000000288132261-0226-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2022164095748-s0053-0000000288132261-0226-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2022357055054-s0060-0000000288132261-0249-s_tp.fits",
+      "bytes": 45311040,
+      "sha256": "565cee275b08ff363d028a58ca0b80a16ba9d24de63d4c00eacec44e0b772e1e",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2022357055054-s0060-0000000288132261-0249-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2022357055054-s0060-0000000288132261-0249-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2023341045131-s0073-0000000288132261-0268-s_tp.fits",
+      "bytes": 47376000,
+      "sha256": "e95896cca730807edc1be92a42ca86dcd9a2322bf07c9cf0e75a1df723c11057",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2023341045131-s0073-0000000288132261-0268-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2023341045131-s0073-0000000288132261-0268-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "tess/tess2024003055635-s0074-0000000288132261-0269-s_tp.fits",
+      "bytes": 47119680,
+      "sha256": "d95cb78f722ff8500ae96fe1452cb1ca3a918cdbedec43d06951eea32be937fa",
+      "role": "TESS SPOC calibrated LC/TPF input (not detector-raw)",
+      "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast%3ATESS/product/tess2024003055635-s0074-0000000288132261-0269-s_tp.fits",
+      "archive_id": "mast:TESS/product/tess2024003055635-s0074-0000000288132261-0269-s_tp.fits",
+      "release_asset": null
+    },
+    {
+      "path": "followup/fl.debias.st.0121.TIC288132261.01.fits",
+      "bytes": 16787520,
+      "sha256": "cbe93d73a59d22694e723e889f5d7451e062559592e65d4e4813bb63392e91e4",
+      "role": "Historical ExoFOP follow-up product",
+      "url": null,
+      "archive_id": null,
+      "release_asset": "toi-1258-validation-followup-inputs.zip"
+    },
+    {
+      "path": "followup/TIC0288132261S-ab20191220.fits",
+      "bytes": 495360,
+      "sha256": "81a6afd58a3aefe85aac5073bc06dde67ceab940f4c72eebb3bb034b6078d6a3",
+      "role": "Historical ExoFOP follow-up product",
+      "url": null,
+      "archive_id": null,
+      "release_asset": "toi-1258-validation-followup-inputs.zip"
+    },
+    {
+      "path": "followup/TIC0288132261S-ab20200104.fits",
+      "bytes": 495360,
+      "sha256": "94e53ad12b7e87bff9a5768ea2af9d020ff81035b315a78e3cefd0ff8e912936",
+      "role": "Historical ExoFOP follow-up product",
+      "url": null,
+      "archive_id": null,
+      "release_asset": "toi-1258-validation-followup-inputs.zip"
+    },
+    {
+      "path": "followup/TOI1258I-ef20200215-562.fits",
+      "bytes": 267840,
+      "sha256": "e15df6f1fa02500e9564ec5ec5aff3edab3b9acb9a10c0bd6316f796af5f58d3",
+      "role": "Historical ExoFOP follow-up product",
+      "url": null,
+      "archive_id": null,
+      "release_asset": "toi-1258-validation-followup-inputs.zip"
+    },
+    {
+      "path": "followup/TOI1258I-ef20200215-832.fits",
+      "bytes": 267840,
+      "sha256": "684323bb94f037361b30a337e1a4aa2cdceeca81fce4b38b68f84d8ebc78453b",
+      "role": "Historical ExoFOP follow-up product",
+      "url": null,
+      "archive_id": null,
+      "release_asset": "toi-1258-validation-followup-inputs.zip"
+    }
+  ],
+  "assets": [
+    {
+      "name": "toi-1258-validation-followup-inputs.zip",
+      "bytes": 14470030,
+      "sha256": "e673cca503e4b59cf0b3f6a126c34b4867f6e9b7e0bc071dc9b42e64c50d3c76",
+      "repository": "Klauscreates/toi-1258-validation",
+      "tag": "data-2026-10-25"
+    }
+  ],
+  "checksum_policy": "Exact local byte hashes; changed archive reprocessing fails verification, never silently substitutes"
+}

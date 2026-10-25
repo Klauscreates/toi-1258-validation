@@ -1,0 +1,195 @@
+{
+  "date": "2026-10-25",
+  "core_environment": "Windows Python 3.13.5",
+  "science_note": "Computational reproduction, not independent scientific validation",
+  "comparisons": {
+    "stitched_bls_summary": {
+      "status": "PASS",
+      "rows_old": 1,
+      "rows_new": 1,
+      "compared_columns": [
+        "catalog_period_days",
+        "best_bls_period_days",
+        "best_bls_t0_btjd",
+        "best_bls_duration_days",
+        "best_bls_depth_ppm",
+        "best_bls_depth_snr",
+        "period_error_percent",
+        "n_cadences",
+        "n_sectors",
+        "period_grid_min_days",
+        "period_grid_max_days",
+        "n_periods"
+      ],
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 1e-08,
+      "maximum_absolute_differences": {
+        "catalog_period_days": 0.0,
+        "best_bls_period_days": 0.0,
+        "best_bls_t0_btjd": 0.0,
+        "best_bls_duration_days": 0.0,
+        "best_bls_depth_ppm": 0.0,
+        "best_bls_depth_snr": 0.0,
+        "period_error_percent": 0.0,
+        "n_cadences": 0.0,
+        "n_sectors": 0.0,
+        "period_grid_min_days": 0.0,
+        "period_grid_max_days": 0.0,
+        "n_periods": 0.0
+      },
+      "differing_columns": [],
+      "regenerated_sha256": "9a4834e42891d9ced2253bd951a089462b46bc0d518e0681e9e998563bb44184"
+    },
+    "stitched_transit_metrics": {
+      "status": "PASS",
+      "rows_old": 1,
+      "rows_new": 1,
+      "compared_columns": [
+        "primary_in_cadences",
+        "primary_oot_cadences",
+        "primary_depth_ppm",
+        "primary_depth_snr",
+        "secondary_in_cadences",
+        "secondary_oot_cadences",
+        "secondary_depth_ppm",
+        "secondary_depth_snr",
+        "odd_in_cadences",
+        "odd_oot_cadences",
+        "odd_depth_ppm",
+        "odd_depth_snr",
+        "even_in_cadences",
+        "even_oot_cadences",
+        "even_depth_ppm",
+        "even_depth_snr",
+        "odd_even_depth_delta_ppm",
+        "catalog_period_days",
+        "catalog_t0_btjd",
+        "catalog_duration_days"
+      ],
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 1e-08,
+      "maximum_absolute_differences": {
+        "primary_in_cadences": 0.0,
+        "primary_oot_cadences": 0.0,
+        "primary_depth_ppm": 0.0,
+        "primary_depth_snr": 0.0,
+        "secondary_in_cadences": 0.0,
+        "secondary_oot_cadences": 0.0,
+        "secondary_depth_ppm": 0.0,
+        "secondary_depth_snr": 0.0,
+        "odd_in_cadences": 0.0,
+        "odd_oot_cadences": 0.0,
+        "odd_depth_ppm": 0.0,
+        "odd_depth_snr": 0.0,
+        "even_in_cadences": 0.0,
+        "even_oot_cadences": 0.0,
+        "even_depth_ppm": 0.0,
+        "even_depth_snr": 0.0,
+        "odd_even_depth_delta_ppm": 0.0,
+        "catalog_period_days": 0.0,
+        "catalog_t0_btjd": 0.0,
+        "catalog_duration_days": 0.0
+      },
+      "differing_columns": [],
+      "regenerated_sha256": "7ca674af76c876e7a9961aabd42e9760d210dad799ba89677a77ad5f65585521"
+    },
+    "stitched_transit_depth_by_sector": {
+      "status": "PASS",
+      "rows_old": 12,
+      "rows_new": 12,
+      "compared_columns": [
+        "sector",
+        "primary_in_cadences",
+        "primary_oot_cadences",
+        "primary_depth_ppm",
+        "primary_depth_snr",
+        "transit_cadence_count",
+        "oot_cadence_count"
+      ],
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 1e-08,
+      "maximum_absolute_differences": {
+        "sector": 0.0,
+        "primary_in_cadences": 0.0,
+        "primary_oot_cadences": 0.0,
+        "primary_depth_ppm": 0.0,
+        "primary_depth_snr": 0.0,
+        "transit_cadence_count": 0.0,
+        "oot_cadence_count": 0.0
+      },
+      "differing_columns": [],
+      "regenerated_sha256": "bcef2c19c79f553f093697a4a346b80d5e42490ff5422ef70eec288a4dce8ecf"
+    },
+    "regenerated_sampling_lightcurve": {
+      "status": "PASS",
+      "rows_old": 160,
+      "rows_new": 160,
+      "compared_columns": [
+        "flux_rel",
+        "flux_err_rel",
+        "n",
+        "flux_rel_norm"
+      ],
+      "absolute_tolerance": 1e-08,
+      "relative_tolerance": 1e-08,
+      "maximum_absolute_differences": {
+        "flux_rel": 0.0,
+        "flux_err_rel": 0.0,
+        "n": 0.0,
+        "flux_rel_norm": 0.0
+      },
+      "differing_columns": [],
+      "regenerated_sha256": "1f87116e5984e612bcba6e70d6b10b6561695479f53b7b74272ed4371ecc55d7"
+    }
+  },
+  "posterior_resampling": {
+    "scope": "Frozen-input posterior resampling, not independent validation or fresh catalog retrieval",
+    "runs": [
+      {
+        "seed": 1258,
+        "N": 1000000,
+        "FPP": 0.0006427828284062409,
+        "NFPP": 4.263541799447796e-05,
+        "seconds": 260.73499999998603,
+        "matches_saved_FPP_NFPP": true
+      },
+      {
+        "seed": 1259,
+        "N": 1000000,
+        "FPP": 0.0005743871121353106,
+        "NFPP": 6.167602768570628e-05,
+        "seconds": 316.73400000002584,
+        "matches_saved_FPP_NFPP": true
+      },
+      {
+        "seed": 1260,
+        "N": 1000000,
+        "FPP": 0.0006920075002546655,
+        "NFPP": 5.4139631553424166e-05,
+        "seconds": 258.81299999999464,
+        "matches_saved_FPP_NFPP": true
+      },
+      {
+        "seed": 1261,
+        "N": 1000000,
+        "FPP": 0.0002368634543687964,
+        "NFPP": 4.666230025687608e-05,
+        "seconds": 181.54699999999139,
+        "matches_saved_FPP_NFPP": true
+      },
+      {
+        "seed": 1262,
+        "N": 1000000,
+        "FPP": 0.0006632611364213448,
+        "NFPP": 6.502792073960497e-05,
+        "seconds": 178.95300000000861,
+        "matches_saved_FPP_NFPP": true
+      }
+    ]
+  },
+  "not_rerun": [
+    "fresh network/catalog aperture contamination",
+    "RV mass inference",
+    "every exploratory archive query"
+  ]
+}

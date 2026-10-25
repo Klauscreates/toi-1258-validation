@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 - 2026-10-25
+
+- Exact input manifests and protected data-release retrieval.
+- Historical FITS reduction wrappers, tested environments and coverage reports.
+- PHAT source recovery and frozen-input TOI posterior resampling where applicable.
+
+
 ## 0.1.2 - 2026-10-25
 
 - Compare regenerated floating-point summaries with a strict 1e-12 relative

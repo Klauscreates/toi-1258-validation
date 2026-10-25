@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "toi-1258-validation"
-version = "0.1.2"
+version = "0.2.0"
 description = "Reproducible evidence checks for the TOI-1258.01 statistical-validation analysis."
 readme = "README.md"
 requires-python = ">=3.11"

@@ -10,7 +10,7 @@
     "build": "1.6.1",
     "setuptools": "84.2.1"
   },
-  "tests": 15,
+  "tests": 21,
   "remote_ci_executed": false,
   "raw_pipeline_executed": false,
   "scope": "Offline audits, test suite, figures, metadata, hygiene and package builds"

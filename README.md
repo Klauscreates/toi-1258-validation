@@ -9,6 +9,12 @@ A transparent transit-validation evidence package for TIC 288132261. It connects
 *Generated from the bundled historical measurements. This is a scientific
 diagnostic, not an image or confirmation of a newly discovered object.*
 
+## Exact Inputs and Reruns
+
+See the [FITS/calibration reproduction guide](docs/RAW_REPRODUCTION.md) for
+checksummed archive inputs, historical software, executable commands and tested
+coverage. Large preserved inputs live in the private data release, not Git history.
+
 ## Start Here
 
 | Question | Resource |
@@ -40,7 +46,7 @@ instructions in the reproduction guide.
 - Tested arithmetic, record matching, and interpretation limits.
 - Reproducible figure generation and Windows/Linux CI configuration.
 - No embedded credentials, raw archive downloads, or journal correspondence.
-- No fresh raw-data reduction or automatic physical classification.
+- Documented core FITS reruns; no automatic physical classification.
 
 Historical evidence snapshot: **2026-07-14**. Repository packaging: **2026-10-25**.
 Current catalog status and literature novelty are not inferred from that date.
@@ -51,8 +57,8 @@ The expanded [source inventory](research/SOURCE_INVENTORY.json) records every
 included project script, shared library, distinct historical version, and
 manuscript source with original/export hashes. Historical code is under
 `research/workspace/`; manuscript material is under [papers](papers/README.md).
-Read the inventory exclusions and empty-source warnings before assuming a
-complete raw-data pipeline is available.
+Read the reproduction coverage and inventory exclusions before assuming every
+exploratory pipeline has been rerun. PHAT source recovery is documented separately.
 
 ```text
 src/          Supported offline audit package

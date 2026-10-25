@@ -1,0 +1,7 @@
+numpy==2.4.4
+scipy==1.17.1
+astropy==7.2.0
+matplotlib==3.10.9
+astroquery==0.4.11
+unlzw3==0.2.3
+pandas==2.3.3

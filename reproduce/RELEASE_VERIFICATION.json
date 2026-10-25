@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-25",
+  "repository": "Klauscreates/toi-1258-validation",
+  "tag": "data-2026-10-25",
+  "draft": false,
+  "verification": "GitHub-reported SHA-256 and byte length match local manifest",
+  "assets": [
+    {
+      "name": "toi-1258-validation-followup-inputs.zip",
+      "bytes": 14470030,
+      "sha256": "e673cca503e4b59cf0b3f6a126c34b4867f6e9b7e0bc071dc9b42e64c50d3c76",
+      "status": "PASS"
+    }
+  ]
+}
