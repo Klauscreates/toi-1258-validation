@@ -1,0 +1,39 @@
+# Future Thread Prompt
+
+Copy this into a new Codex thread when starting a new target.
+
+```text
+Use our saved Astro Candidate Pipeline from:
+.\pipelines\astro_candidate_pipeline
+
+Treat this as the same investigation framework we used for IRPCA-002.
+Do not start from scratch.
+
+Target:
+[PUT TARGET NAME HERE]
+
+Primary coordinates:
+RA = [RA DEG OR HMS]
+Dec = [DEC DEG OR DMS]
+
+Search instruction:
+[PUT SEPARATION/PA/ANNULUS/PHYSICAL HEURISTIC HERE]
+
+Working hypothesis:
+[PUT HYPOTHESIS HERE]
+
+Execute the pipeline:
+1. Build a target manifest from TARGET_MANIFEST_TEMPLATE.json.
+2. Convert the search instruction into exact geometry.
+3. Query MAST, ESO, KOA, and other relevant archives.
+4. Run high-contrast quicklook if image data exists.
+5. Run same-radius controls.
+6. Run detector-lock stress if multi-frame/rotated data exists.
+7. Run PCA/KLIP-style residual testing where possible.
+8. Run fake-source injection where possible.
+9. Run thermal/polarimetry/spectroscopy/interferometry gates.
+10. Package all math, figures, tables, scripts, reports, and a manuscript draft.
+
+Keep claim language strong for measured evidence and separate from physical interpretation.
+```
+

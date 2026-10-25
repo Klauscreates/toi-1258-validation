@@ -1,0 +1,24 @@
+{
+  "target": "TOI-1258.01",
+  "tic": "288132261",
+  "snapshot": "2026-07-14",
+  "interpretation": "Archived posterior scenarios reproduce the reported low FPP/NFPP values under the historical model. This audit does not rerun TRICERATOPS, confirm a planet independently, measure mass, or verify current catalog status.",
+  "seed_count": 5,
+  "FPP_range": [
+    0.0002368634543688314,
+    0.0006920075002545581
+  ],
+  "NFPP_range": [
+    4.263541799447553e-05,
+    6.502792073960127e-05
+  ],
+  "all_below_reported_thresholds": true,
+  "bls_period_days": 10.261376896,
+  "catalog_period_days_snapshot": 10.2613397,
+  "relative_period_difference_percent": 0.00036248678132334356,
+  "bls_depth_ppm": 722.467,
+  "sectors": 12,
+  "mass_measured_here": false,
+  "current_archive_status_checked": false,
+  "verified_provenance_files": 18
+}

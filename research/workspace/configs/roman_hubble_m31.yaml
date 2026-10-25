@@ -1,0 +1,140 @@
+project:
+  name: roman_hubble_m31_microlensing
+  target: M31 pixel-lensing and crowded-field microlensing candidates
+  science_goal: Distinguish one-time microlensing events from natural stellar variability and imaging artifacts.
+
+data_sources:
+  roman:
+    status: future_public_data
+    archive: MAST
+    notes:
+      - Roman WFI data are expected through MAST after launch and commissioning.
+      - Core microlensing cadence targets the Milky Way bulge; M31 requires future targeted observations or archival overlap.
+  hubble:
+    status: public_archive
+    archive: MAST
+    starting_collections:
+      - PHAT
+      - Hubble Legacy Archive M31 programs with repeated visits
+
+ingestion:
+  query_api: astroquery.mast
+  products:
+    - calibrated_images
+    - high_level_science_products
+    - exposure_metadata
+    - data_quality_masks
+  storage:
+    image_tiles: zarr
+    light_curves: parquet
+    provenance: sqlite_or_postgres
+
+preprocessing:
+  astrometry: align_to_gaia_or_common_hst_frame
+  photometry:
+    - difference_imaging
+    - forced_psf_photometry
+    - scene_modeling_for_crowded_regions
+  quality_filters:
+    - cosmic_ray_rejection
+    - saturation_masking
+    - diffraction_spike_masking
+    - bad_detector_region_masking
+
+candidate_generation:
+  detection:
+    method: positive_residuals_on_difference_images
+    threshold_sigma: 5.0
+    min_epochs: 3
+  grouping:
+    spatial_radius_arcsec: 0.08
+    temporal_window_days: 120
+  initial_rejection:
+    - known_variable_crossmatch
+    - moving_object_motion_fit
+    - single_epoch_artifact
+    - edge_or_bad_pixel_event
+
+model:
+  name: hybrid_microlensing_transformer
+  inputs:
+    image_sequence:
+      shape: [time, band, 31, 31]
+      channels:
+        - science_cutout
+        - reference_cutout
+        - difference_cutout
+        - uncertainty_cutout
+        - data_quality_mask
+    light_curve:
+      features:
+        - mjd
+        - flux_delta
+        - flux_error
+        - band_id
+        - zeropoint
+        - seeing_or_psf_width
+        - local_background
+        - crowding_index
+    physics_features:
+      - paczynski_chi2
+      - paczynski_t0
+      - paczynski_te
+      - paczynski_u0
+      - baseline_flux
+      - blend_fraction
+      - lomb_scargle_best_period
+      - variable_template_chi2
+      - color_change_statistic
+  outputs:
+    classes:
+      - microlensing_single_lens
+      - microlensing_planetary_perturbation
+      - variable_star_periodic
+      - variable_star_irregular
+      - supernova_or_agn
+      - moving_object
+      - image_artifact
+    regression:
+      - event_time_mjd
+      - event_duration_days
+      - peak_magnification
+      - anomaly_duration_hours
+    uncertainty:
+      - epistemic_score
+      - aleatoric_score
+
+training:
+  positives:
+    - synthetic_microlensing_injections
+    - known_ogle_or_moa_microlensing_for_shape_pretraining
+    - future_roman_bulge_labeled_events
+  negatives:
+    - archival_variable_stars
+    - real_difference_image_artifacts
+    - supernovae_and_agn
+    - injected_cosmic_rays_and_bad_pixels
+  losses:
+    - focal_classification_loss
+    - event_parameter_regression_loss
+    - physics_consistency_regularizer
+    - contrastive_embedding_loss
+  validation:
+    - injection_recovery_curve
+    - false_positives_per_detector_day
+    - precision_at_top_k
+    - calibration_error
+
+operations:
+  orchestration: prefect_or_airflow
+  distributed_compute: dask_or_ray
+  model_registry: mlflow_or_weights_and_biases
+  candidate_database: postgres_postgis
+  human_vetting:
+    views:
+      - cutout_movie
+      - multiband_light_curve
+      - difference_image_stamp_grid
+      - microlensing_fit_overlay
+      - variable_star_periodogram
+      - provenance_and_crossmatches

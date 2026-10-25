@@ -1,0 +1,76 @@
+# Evidence Schema
+
+Every mission package should preserve the same categories.
+
+## Required Folders
+
+```text
+outputs/[MISSION]_CANDIDATE_PAPER_PACKAGE_[DATE]/
+  README.md
+  EVIDENCE_INDEX.md
+  manuscript/
+  evidence/
+    figures/
+    tables/
+    reports/
+    archive_gates/
+    scripts/
+```
+
+## Required Report Sections
+
+Each final report should contain:
+
+1. Target coordinate.
+2. Search heuristic or reason for the target region.
+3. Data sets searched.
+4. Positive evidence.
+5. Negative evidence.
+6. Blocked/archive-gated data.
+7. Artifact stress tests.
+8. Current classification.
+9. What is not proven.
+10. Next observation needed.
+
+## Required Tables
+
+Minimum useful tables:
+
+- candidate coordinate table;
+- archive inventory table;
+- frame-level scoring table;
+- detector-lock stress table;
+- same-radius controls table;
+- fake-source injection summary;
+- physical gate summary;
+- evidence manifest.
+
+## Required Figures
+
+Minimum useful figures:
+
+- target coordinate / annulus map;
+- high-contrast residual map;
+- detector-lock stress plot;
+- PCA/KLIP aggregate plot if available;
+- fake-source injection plot if available;
+- thermal/polarimetry/spectroscopy plots if available.
+
+## Claim Labels
+
+Use these labels consistently:
+
+```text
+candidate
+strong candidate
+confirmed residual
+confirmed astrophysical object
+classified object
+```
+
+Do not promote a target from one label to the next without the required gate:
+
+- confirmed residual: coordinate-specific measured signal with controls;
+- confirmed astrophysical object: independent telescope/instrument/astrometry or isolated physical signal;
+- classified object: spectrum/SED/orbit/physical model.
+

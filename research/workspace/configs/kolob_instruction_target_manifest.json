@@ -1,0 +1,108 @@
+{
+  "project": "KOLOB-INSTRUCTION-TARGET-MANIFEST-0001",
+  "objective": "Use the user's inversion framework and scriptural/cross-cultural directions as a rule set for selecting real astronomical target regions and archive tests.",
+  "claim_boundary": "The textual directions are treated as hypothesis-generation instructions, not as proof. A target becomes scientifically meaningful only when it produces a coordinate, observable, archival dataset, or falsifiable residual.",
+  "inversion_rules": [
+    {
+      "rule_id": "IR1",
+      "textual_direction": "Great governing light / nearest governing center",
+      "inverted_physics_target": "central mass anchor, supermassive black hole, intermediate-mass black hole, or compact dark object",
+      "observable_translation": "stellar orbits, astrometric accelerations, microlensing events, X-ray/radio flares, mass-profile residuals"
+    },
+    {
+      "rule_id": "IR2",
+      "textual_direction": "One day equals one thousand Earth years",
+      "inverted_physics_target": "period ladder or extreme gravitational time-dilation environment",
+      "observable_translation": "1000-year Keplerian orbit radius around candidate mass; near-horizon clock condition; long-timescale lensing profile"
+    },
+    {
+      "rule_id": "IR3",
+      "textual_direction": "Heart/center/dog-star linguistic and cultural direction",
+      "inverted_physics_target": "Sirius system as a cross-cultural control field, not as proof",
+      "observable_translation": "Sirius A/B orbit, white-dwarf mass, Gaia/HST astrometry, unexplained residuals or additional-companion limits"
+    },
+    {
+      "rule_id": "IR4",
+      "textual_direction": "Hidden/invisible heavy body",
+      "inverted_physics_target": "non-luminous compact object",
+      "observable_translation": "microlensing without luminous lens, astrometric wobble, X-ray/radio quiet compact-object candidates"
+    }
+  ],
+  "target_regions": [
+    {
+      "target_id": "KTA-001",
+      "name": "Sagittarius A* control region",
+      "priority": 1,
+      "ra_deg_j2000_seed": 266.416837,
+      "dec_deg_j2000_seed": -29.007811,
+      "search_radius_arcmin": 10.0,
+      "why_selected": "Best physical translation of an inverted governing-center instruction.",
+      "data_modes": ["infrared astrometry", "radio imaging", "X-ray flare history", "stellar-orbit catalog"],
+      "archives_or_sources": ["MAST/JWST", "Chandra Data Archive", "ESO/VLT literature", "Keck Galactic Center literature", "EHT literature"],
+      "tests": [
+        "Compare 1000-year Keplerian radius around Sgr A* to known S-star orbit scale.",
+        "Check whether any known orbit/time structure naturally matches the 1000-year reckoning.",
+        "Use Sgr A* as a control, not as a claimed identity."
+      ],
+      "claim_status": "high-value control target; no unique match yet"
+    },
+    {
+      "target_id": "KTA-002",
+      "name": "Sirius A/B system",
+      "priority": 2,
+      "ra_deg_j2000_seed": 101.287155,
+      "dec_deg_j2000_seed": -16.716116,
+      "search_radius_arcmin": 5.0,
+      "why_selected": "Best physical translation of the dog-star/hidden-dense-companion direction.",
+      "data_modes": ["HST imaging", "Gaia astrometry", "historical orbit solutions", "white-dwarf spectroscopy"],
+      "archives_or_sources": ["MAST/HST", "Gaia archive", "SIMBAD/VizieR", "published Sirius orbit literature"],
+      "tests": [
+        "Confirm Sirius B mass and orbit from modern data.",
+        "Search for residuals that would require an additional hidden mass.",
+        "Run a separate historical-source audit before treating Dogon material as evidence."
+      ],
+      "claim_status": "real astronomical control field; historical independence claim disputed"
+    },
+    {
+      "target_id": "KTA-003",
+      "name": "Nearby hidden compact-object microlensing fields",
+      "priority": 3,
+      "ra_deg_j2000_seed": null,
+      "dec_deg_j2000_seed": null,
+      "search_radius_arcmin": null,
+      "why_selected": "Best direct analogue to the M31 method: infer invisible mass by light-curve distortion.",
+      "data_modes": ["OGLE microlensing", "ZTF transient light curves", "Gaia astrometric microlensing", "Pan-STARRS archival photometry"],
+      "archives_or_sources": ["OGLE", "ZTF", "Gaia DR3/DR4 when available", "Pan-STARRS", "MAST"],
+      "tests": [
+        "Search for long-timescale events with no luminous lens counterpart.",
+        "Rank by achromaticity, baseline return, and astrometric residual.",
+        "Reject ordinary variables, blends, artifacts, and known stellar lenses first."
+      ],
+      "claim_status": "scientifically productive but not text-specific until a predicted region is defined"
+    },
+    {
+      "target_id": "KTA-004",
+      "name": "M31-style extragalactic compact-object search extension",
+      "priority": 4,
+      "ra_deg_j2000_seed": 10.684708,
+      "dec_deg_j2000_seed": 41.26875,
+      "search_radius_arcmin": 90.0,
+      "why_selected": "Uses the exact successful method family from PHAT-MICRO-0003: archival crowded-field transient/microlensing search.",
+      "data_modes": ["HST PHAT", "Subaru/HSC", "Pan-STARRS/PAndromeda", "Roman future survey"],
+      "archives_or_sources": ["MAST", "HSCLA", "SMOKA", "Pan-STARRS", "Roman future public products"],
+      "tests": [
+        "Extend candidate search for chromatic or hidden-lens anomalies.",
+        "Use PHAT-MICRO-0003 as method reference, not as proof of Kolob.",
+        "Build a compact-object anomaly population table."
+      ],
+      "claim_status": "methodologically strong; theological connection unproven"
+    }
+  ],
+  "execution_order": [
+    "Build target manifest and constraint table.",
+    "Run source/coordinate verification against SIMBAD/VizieR when network access is available.",
+    "Run MAST metadata queries for Sirius and Sgr A*.",
+    "Build a compact-object archive search manifest for microlensing and Gaia residuals.",
+    "Only escalate to heavy data downloads after metadata shows usable products."
+  ]
+}

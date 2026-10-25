@@ -1,0 +1,2 @@
+catalog_period_days,best_bls_period_days,best_bls_t0_btjd,best_bls_duration_days,best_bls_depth_ppm,best_bls_depth_snr,period_error_percent,n_cadences,n_sectors,period_grid_min_days,period_grid_max_days,n_periods
+10.261339700,10.261376896,1691.830442,0.191166,722.467,64.704,0.000362,199161,12,0.5,20.0,6000

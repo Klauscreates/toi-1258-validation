@@ -1,0 +1,225 @@
+# Astro Candidate Pipeline Playbook
+
+This is the execution order for future missions.
+
+## Phase 0: Target Manifest
+
+Create one target manifest before running archive or image work.
+
+Minimum fields:
+
+- target name;
+- primary object RA/Dec;
+- proper motion if relevant;
+- distance if known;
+- predicted separation/PA or annulus;
+- expected wavelength regime;
+- physical hypothesis;
+- search heuristic or instruction source;
+- evidence threshold;
+- output folder.
+
+Use:
+
+`TARGET_MANIFEST_TEMPLATE.json`
+
+## Phase 1: Geometry
+
+Convert all target instructions into hard geometry.
+
+If separation `rho` and position angle `theta` are known:
+
+```text
+east_arcsec  = rho_arcsec * sin(theta)
+north_arcsec = rho_arcsec * cos(theta)
+```
+
+Small-angle coordinate conversion:
+
+```text
+target_ra_deg  = primary_ra_deg + east_arcsec / (3600 * cos(primary_dec_deg))
+target_dec_deg = primary_dec_deg + north_arcsec / 3600
+```
+
+Recover separation and PA from offsets:
+
+```text
+rho_arcsec = sqrt(east_arcsec^2 + north_arcsec^2)
+pa_deg     = atan2(east_arcsec, north_arcsec) mod 360
+```
+
+For high-proper-motion systems, preserve both:
+
+- relative coordinates around the primary;
+- absolute sky coordinates at each observation epoch.
+
+## Phase 2: Archive Inventory
+
+Query all relevant archive families before deep reduction:
+
+- MAST: HST/JWST.
+- ESO: SPHERE, VISIR, GRAVITY, CRIRES/CRIRES+, ERIS/SINFONI, MUSE, MATISSE.
+- KOA: NIRSPEC, OSIRIS, NIRC2, HIRES.
+- Mission-specific archives if target requires them.
+
+Save:
+
+- raw metadata tables;
+- compact candidate tables;
+- access status;
+- footprint/slot coverage;
+- exact blockers.
+
+## Phase 3: High-Contrast Imaging Reduction
+
+For image data near a bright primary:
+
+1. Build a quicklook residual model.
+2. Score the target coordinate.
+3. Score same-radius controls.
+4. Run alternate orientation/sign conventions.
+5. Preserve low-median/high-frame spikes instead of averaging them away.
+
+Key metric set:
+
+```text
+n_frames
+median_snr
+max_snr
+frames_gt_3sigma
+frames_gt_5sigma
+same_radius_control_distribution
+```
+
+## Phase 4: Detector-Lock Stress
+
+Test whether the signal follows sky rotation or detector coordinates.
+
+Required outputs:
+
+- sky-fixed score;
+- detector-fixed score;
+- wrong-orientation score;
+- same-radius controls.
+
+Strong candidate behavior:
+
+```text
+sky-fixed signal high
+detector-fixed control quiet
+wrong-orientation control quiet
+```
+
+## Phase 5: PCA/KLIP Residual Tests
+
+Run PCA/KLIP-like reductions across several component counts.
+
+Preserve:
+
+- component count;
+- target SNR;
+- controls;
+- median behavior;
+- frame-level maxima;
+- self-subtraction caveats.
+
+## Phase 6: Fake-Source Injection
+
+Inject fake sources at the target coordinate and same-radius controls.
+
+Test shapes:
+
+- point;
+- core+halo;
+- diffuse;
+- elliptical;
+- double-lobed;
+- shell/ring;
+- asymmetric.
+
+Interpretation:
+
+- If fake persistent sources recover with strong medians and the real candidate is low-median/spiky, do not call it an ordinary persistent point source.
+- If fake sources are destroyed the same way as the candidate, self-subtraction remains a viable explanation.
+
+## Phase 7: Independent Physical Gates
+
+Run every available independent axis:
+
+- thermal imaging;
+- polarimetry;
+- spectroscopy;
+- IFU cube extraction;
+- high-resolution cross-correlation spectroscopy;
+- interferometric fiber/field placement;
+- proper-motion/common-proper-motion tests;
+- archival recurrence.
+
+Each gate must output:
+
+```text
+positive / negative / blocked / not applicable
+why
+files used
+next needed test
+```
+
+## Phase 8: Archive-Access Gates
+
+Blocked data is still evidence.
+
+For each blocked archive:
+
+- identify program ID;
+- identify filters/modes;
+- confirm whether the target slot is inside the footprint;
+- confirm access state;
+- record whether the data would answer the question if released.
+
+## Phase 9: Evidence Package
+
+Every mission ends with:
+
+```text
+outputs/[TARGET]_CANDIDATE_PAPER_PACKAGE_[DATE]/
+  README.md
+  EVIDENCE_INDEX.md
+  manuscript/
+  evidence/
+    figures/
+    tables/
+    reports/
+    archive_gates/
+    scripts/
+```
+
+## Phase 10: Claim Language
+
+Use strong language for what is measured.
+
+Examples:
+
+```text
+real coordinate-specific residual candidate
+recurrent high-contrast residual
+detector-fixed explanation disfavored
+public archive cannot yet provide chemistry
+```
+
+Do not skip the boundary between:
+
+```text
+candidate detection
+physical object confirmation
+chemical classification
+orbit solution
+```
+
+For IRPCA-002, the saved claim is:
+
+```text
+IRPCA-002 is a real, recurrent high-contrast residual candidate at
+1.185 arcsec and PA 129.5 deg from Sirius A. Its physical class remains
+unsettled pending deep-infrared photometry/spectroscopy.
+```
+

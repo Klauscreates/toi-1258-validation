@@ -1,0 +1,105 @@
+{
+  "project": "KOLOB-PHYSICS-AUDIT-0001",
+  "objective": "Translate the Kolob/Sirius/central-anchor theory into an evidence-first audit using the same reproducible claim-boundary style used for PHAT-MICRO-0003.",
+  "claim_boundary": "This project can test textual/astronomical correspondences and physical feasibility. It cannot prove theology, divine ontology, or baptismal truth claims from telescope data.",
+  "text_claims": [
+    {
+      "id": "T1",
+      "claim": "Kolob is described as one of the great celestial bodies nearest to the throne/governing center.",
+      "source": "Book of Abraham 3, official LDS scripture text",
+      "source_url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/abr/3?lang=eng"
+    },
+    {
+      "id": "T2",
+      "claim": "One Kolob day/revolution is described as one thousand Earth years.",
+      "source": "Book of Abraham 3:4, official LDS scripture text",
+      "source_url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/abr/3?lang=eng"
+    },
+    {
+      "id": "T3",
+      "claim": "The text arranges bodies by relative greatness, reckoning, time, and governing order.",
+      "source": "Book of Abraham 3:3-9, official LDS scripture text",
+      "source_url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/abr/3?lang=eng"
+    }
+  ],
+  "physics_hypotheses": [
+    {
+      "id": "H0",
+      "name": "Textual or ritual cosmology",
+      "testable": true,
+      "description": "The passage is a theological/cosmological ordering system, not a map to a physical object.",
+      "expected_observables": "No unique astronomical coordinate, no required mass, no falsifiable telescope target."
+    },
+    {
+      "id": "H1",
+      "name": "Keplerian time ladder",
+      "testable": true,
+      "description": "The one-thousand-year value is an orbital/revolution period, not relativistic time dilation.",
+      "expected_observables": "A 1000-year orbital period maps to a calculable semi-major axis around a chosen central mass."
+    },
+    {
+      "id": "H2",
+      "name": "General-relativity time dilation",
+      "testable": true,
+      "description": "The one-day-to-one-thousand-years ratio is literal gravitational time dilation near a compact object.",
+      "expected_observables": "A stationary clock must sit extremely close to an event horizon; stable matter/orbits become the main failure test."
+    },
+    {
+      "id": "H3",
+      "name": "Galactic-center analog",
+      "testable": true,
+      "description": "Kolob is being mapped onto Sagittarius A* or a central-mass anchor of the Milky Way.",
+      "expected_observables": "Known S-star orbits, infrared/X-ray/radio flares, and EHT constraints should match or reject specific claims."
+    },
+    {
+      "id": "H4",
+      "name": "Sirius/Dogon cross-cultural anchor",
+      "testable": true,
+      "description": "Sirius traditions preserve independent knowledge of a hidden dense companion or central anchor.",
+      "expected_observables": "Claims must survive historical source audit, contamination checks, and modern Sirius system astrometry."
+    },
+    {
+      "id": "H5",
+      "name": "Hidden compact object / PBH search",
+      "testable": true,
+      "description": "The useful scientific residue is a search for compact dark objects via microlensing/astrometry, independent of theological proof.",
+      "expected_observables": "Microlensing events, stellar acceleration residuals, Gaia astrometric anomalies, X-ray/radio non-detections."
+    }
+  ],
+  "constants": {
+    "earth_year_days": 365.25,
+    "kolob_reckoning_earth_years": 1000.0,
+    "solar_mass_kg": 1.98847e30,
+    "gravitational_constant": 6.67430e-11,
+    "speed_of_light_m_s": 299792458.0,
+    "astronomical_unit_m": 149597870700.0,
+    "parsec_m": 3.085677581491367e16
+  },
+  "source_register": [
+    {
+      "id": "S1",
+      "label": "Official LDS Book of Abraham 3",
+      "url": "https://www.churchofjesuschrist.org/study/scriptures/pgp/abr/3?lang=eng"
+    },
+    {
+      "id": "S2",
+      "label": "NASA explanation of the Galactic Center and Sagittarius A*",
+      "url": "https://science.nasa.gov/mission/webb/science-overview/science-explainers/what-is-the-center-of-our-galaxy-like/"
+    },
+    {
+      "id": "S3",
+      "label": "Event Horizon Telescope Sgr A* result",
+      "url": "https://arxiv.org/abs/2311.08680"
+    },
+    {
+      "id": "S4",
+      "label": "NASA Sirius B white-dwarf measurement page",
+      "url": "https://science.nasa.gov/?p=11632"
+    },
+    {
+      "id": "S5",
+      "label": "van Beek 1991 Dogon Restudied source record",
+      "url": "https://dogonlanguages.info/sources/vanbeek1991"
+    }
+  ]
+}

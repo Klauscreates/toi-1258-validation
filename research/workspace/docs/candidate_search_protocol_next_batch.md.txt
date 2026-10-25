@@ -1,0 +1,44 @@
+# Candidate Search Protocol Next Batch
+
+## Intent
+
+Run a larger PHAT archival microlensing search batch, roughly 10,000 to 15,000 candidate image opportunities if the archive path supports it, using the refined candidate-vetting protocol established from PHAT-MICRO-0004.
+
+## Locked Protocol
+
+1. Start from archive discovery, not visual intuition.
+   - Find repeat or overlapping HST/PHAT image opportunities around Andromeda fields.
+   - Do not restrict future passes only to the original 73 golden same-filter pairs if broader archive coverage can be queried safely.
+
+2. For each raw candidate, keep the initial difference-imaging discipline.
+   - PSF-match before subtraction.
+   - Reject obvious alignment dipoles, edge artifacts, saturated halos, bad pixels, and one-exposure-only glitches.
+   - Preserve RA/Dec, source images, difference stamps, and light-curve snippets in a ledger.
+
+3. Promote only survivors into the refined vetter.
+   - Build review sheets.
+   - Run forced photometry at the exact RA/Dec, without recentering on a brighter neighbor.
+   - Pull all available usable HST products for that coordinate, not only the discovery image pair.
+
+4. Require color and time-domain tests.
+   - Test achromaticity across available filters.
+   - Treat microlensing as same fractional magnification of the same source SED, not equal absolute flux in every band.
+   - Build baseline/event/post-event light curves wherever the archive allows.
+   - Fit flat, single-spike, outburst/variable, and Paczynski microlensing models.
+   - Search for a planetary residual only after a smooth lens model is plausible.
+
+5. Use the candidate 004 lesson.
+   - Do not claim a planet from one strong UV/blue residual.
+   - Do not claim a total rejection when a clean historical baseline does not exist.
+   - Label outcomes honestly: planet candidate, not new planet detection, needs historical baseline, needs visual feedback, or insufficient data.
+
+6. Save outputs in the project.
+   - Candidate ledger.
+   - Forced-photometry CSV.
+   - Model report JSON/Markdown.
+   - Review images/light-curve panels.
+   - Clear final status for each survivor.
+
+## Next Execution Request
+
+When the user asks to execute, run the next larger batch using this refined protocol and report when the batch artifacts have been saved.

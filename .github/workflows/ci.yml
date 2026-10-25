@@ -1,0 +1,25 @@
+name: Reproducibility
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e ".[dev,figures]"
+      - run: python -m unittest discover -s tests -v
+      - run: ruff check src tests tools
+      - run: cffconvert --validate
+      - run: python tools/validate_repository.py
+      - run: python -m toi1258
+      - run: python tools/plot_overview.py --output results/overview.png
+      - run: python -m build
+

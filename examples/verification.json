@@ -1,0 +1,17 @@
+{
+  "tested_on": "2026-10-25",
+  "python": "3.13.5",
+  "platform": "Windows",
+  "versions": {
+    "matplotlib": "3.11.2",
+    "numpy": "2.5.4",
+    "ruff": "0.17.2",
+    "cffconvert": "2.0.0",
+    "build": "1.6.1",
+    "setuptools": "84.2.1"
+  },
+  "tests": 15,
+  "remote_ci_executed": false,
+  "raw_pipeline_executed": false,
+  "scope": "Offline audits, test suite, figures, metadata, hygiene and package builds"
+}

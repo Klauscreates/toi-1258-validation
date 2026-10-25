@@ -1,0 +1,2 @@
+primary_in_cadences,primary_oot_cadences,primary_depth_ppm,primary_depth_snr,secondary_in_cadences,secondary_oot_cadences,secondary_depth_ppm,secondary_depth_snr,odd_in_cadences,odd_oot_cadences,odd_depth_ppm,odd_depth_snr,even_in_cadences,even_oot_cadences,even_depth_ppm,even_depth_snr,odd_even_depth_delta_ppm,catalog_period_days,catalog_t0_btjd,catalog_duration_days
+4409,161127,614.371,56.744,4530,161127,-1.194,-0.119,2267,161127,602.852,39.450,2142,161127,623.980,41.092,21.128,10.261339700,3333.648786,0.202292

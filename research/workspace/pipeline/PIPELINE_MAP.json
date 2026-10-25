@@ -1,0 +1,131 @@
+{
+  "name": "Astro Candidate Pipeline",
+  "version": "2026-07-18",
+  "reference_case": {
+    "name": "IRPCA-002",
+    "package": "outputs/IRPCA002_CANDIDATE_PAPER_PACKAGE_2026-06-13",
+    "coordinate": {
+      "separation_arcsec": 1.185,
+      "pa_deg": 129.5,
+      "east_arcsec": 0.9146,
+      "north_arcsec": -0.7538
+    }
+  },
+  "steps": [
+    {
+      "id": "geometry",
+      "purpose": "Convert target instructions into exact coordinate offsets.",
+      "math": [
+        "east_arcsec = rho_arcsec * sin(pa_deg)",
+        "north_arcsec = rho_arcsec * cos(pa_deg)",
+        "target_ra_deg = primary_ra_deg + east_arcsec/(3600*cos(primary_dec_deg))",
+        "target_dec_deg = primary_dec_deg + north_arcsec/3600"
+      ],
+      "reference_scripts": [
+        "scripts/sirius_irpca002_cpm_orbit_gate.py",
+        "scripts/sirius_barycentric_residual_audit.py"
+      ]
+    },
+    {
+      "id": "archive_inventory",
+      "purpose": "Find public data and classify access/coverage.",
+      "reference_scripts": [
+        "scripts/sirius_mast_metadata_probe.py",
+        "scripts/sirius_ir_archive_probe.py",
+        "scripts/sirius_deep_ir_spectral_archive_gate.py",
+        "scripts/sirius_hrccs_archive_gate.py"
+      ]
+    },
+    {
+      "id": "high_contrast_quicklook",
+      "purpose": "Score target and same-radius controls in high-contrast imaging.",
+      "reference_scripts": [
+        "scripts/sirius_composite_sphere_visir_key.py",
+        "scripts/sirius_irpca002_irdis_dbi_score.py",
+        "scripts/sirius_sphere_klip_quicklook.py"
+      ]
+    },
+    {
+      "id": "detector_lock_stress",
+      "purpose": "Separate sky-fixed behavior from detector-fixed artifacts.",
+      "reference_scripts": [
+        "scripts/sirius_sphere_detector_lock_stress.py"
+      ]
+    },
+    {
+      "id": "fake_source_injection",
+      "purpose": "Test whether the pipeline would recover real sources at the target slot.",
+      "reference_scripts": [
+        "scripts/sirius_sphere_fake_source_injection.py",
+        "scripts/sirius_hst_fake_source_injection_pca001.py",
+        "scripts/sirius_hst_negative_source_fit_pca001.py"
+      ]
+    },
+    {
+      "id": "thermal_gate",
+      "purpose": "Check thermal imaging support or non-support.",
+      "reference_scripts": [
+        "scripts/sirius_visir_torch_subset.py",
+        "scripts/sirius_visir_chopnod_quicklook.py",
+        "scripts/sirius_ground_ao_thermal_audit.py"
+      ]
+    },
+    {
+      "id": "polarimetry_gate",
+      "purpose": "Check polarized-source or dusty-scattering support.",
+      "reference_scripts": [
+        "scripts/sirius_sphere_zimpol_polarimetry_quicklook.py",
+        "scripts/sirius_eso_zimpol_official_pipeline.py"
+      ]
+    },
+    {
+      "id": "spectroscopy_gate",
+      "purpose": "Extract projected-slot or IFU spectra where footprint supports it.",
+      "reference_scripts": [
+        "scripts/sirius_stis_slot_spectral_barcode.py",
+        "scripts/sirius_irpca002_ifu_spectral_barcode.py"
+      ]
+    },
+    {
+      "id": "exoplanet_barcode_extension",
+      "purpose": "Validate exoplanet atmosphere barcode extraction and transit recovery before searching unclassified TESS/Kepler light curves.",
+      "reference_docs": [
+        "pipelines/astro_candidate_pipeline/EXOPLANET_BARCODE_EXTENSION.md"
+      ],
+      "reference_scripts": [
+        "scripts/exoplanet_barcode_pilot.py",
+        "scripts/exoplanet_transit_recovery_gate.py",
+        "scripts/exoplanet_tess_candidate_discovery_pilot.py"
+      ]
+    },
+    {
+      "id": "multimessenger_governing_nodes",
+      "purpose": "Rank Gaia astrometric mass anomalies and cross-match known-object, Chandra X-ray, and TESS time-domain evidence without conflating the observables.",
+      "reference_docs": [
+        "pipelines/astro_candidate_pipeline/MULTIMESSENGER_GOVERNING_NODES_MANIFEST.json"
+      ],
+      "reference_scripts": [
+        "scripts/multimessenger_governing_nodes_pilot.py",
+        "scripts/tess_high_mass_proxy_pixel_parser.py",
+        "scripts/hd85563_difference_image_localization.py"
+      ],
+      "reference_output": [
+        "outputs/MULTIMESSENGER_GOVERNING_NODES_PILOT_2026-07-18",
+        "outputs/TESS_HIGH_MASS_PROXY_PIXEL_GATE_2026-07-18",
+        "outputs/HD85563_DIFFERENCE_IMAGE_GATE_2026-07-18"
+      ]
+    },
+    {
+      "id": "interferometry_fiber_gate",
+      "purpose": "Determine whether fiber/IFU/interferometric data actually sampled the candidate slot.",
+      "reference_scripts": [
+        "scripts/sirius_gravity_header_fiber_gate.py"
+      ]
+    },
+    {
+      "id": "evidence_package",
+      "purpose": "Collect figures, tables, reports, scripts, and paper draft.",
+      "reference_package": "outputs/IRPCA002_CANDIDATE_PAPER_PACKAGE_2026-06-13"
+    }
+  ]
+}

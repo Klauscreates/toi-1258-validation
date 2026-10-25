@@ -1,0 +1,72 @@
+project:
+  name: sirius_c_wfc3_residual_audit
+  target: Sirius AB astrometric residuals and WFC3 image residuals
+  science_goal: Strictly test the Sirius C claim without converting unexplained residuals into discovery claims.
+
+claim_standard:
+  default_verdict: not_confirmed
+  confirmation_threshold_sigma: 5.0
+  confirmation_delta_bic: 10.0
+  candidate_period_years: 6.3
+  required_checks:
+    - coherent_sky_plane_wobble
+    - independent_epoch_match
+    - leave_one_epoch_out_stability
+    - detector_fixed_residual_rejection
+    - calibration_artifact_veto
+    - literature_non_detection_context
+
+data_sources:
+  gaia:
+    archive: Gaia DR3
+    role: catalog_frame_constraint
+    target_name: Sirius
+    center_ra_degrees: 101.28715533
+    center_dec_degrees: -16.71611586
+    field_radius_degrees: 0.0833333333
+    caveats:
+      - Sirius A is brighter than the ordinary Gaia DR3 bright-limit regime near G~=3.
+      - Gaia DR3 should constrain nearby sources and reference frame context, not prove Sirius C alone.
+  hubble:
+    archive: MAST
+    role: primary_wfc3_astrometry_and_residual_images
+    instruments:
+      - WFC3/UVIS
+      - WFC3/IR
+    preferred_products:
+      - FLC
+      - FLT
+      - DRC
+      - DRZ
+    required_artifact_checks:
+      - saturation
+      - diffraction_spikes
+      - scattered_light
+      - geometric_distortion
+      - cte_loss
+      - ir_persistence
+      - detector_edges
+
+wobble_match:
+  baseline_system: Sirius AB
+  baseline_period_years: 50.1284
+  residual_period_years: 6.3
+  require_same_sky_phase_across_epochs: true
+  reject_detector_fixed_residuals: true
+  min_independent_epochs: 6
+
+artificial_signal_scope:
+  mode: astrometry_image_only
+  allowed_positive_label: unexplained_astrometric_image_anomaly
+  artificial_outpost_verdict_without_external_data: no_evidence
+
+outputs:
+  root: outputs/sirius_c_audit
+  data_root: data/sirius_c_audit
+  products:
+    - gaia_dr3_field_query.sql
+    - mast_wfc3_criteria.json
+    - orbit_fit_result.json
+    - candidate_ledger.json
+    - audit_verdict.json
+    - final_report.md

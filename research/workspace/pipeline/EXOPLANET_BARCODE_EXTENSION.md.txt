@@ -1,0 +1,76 @@
+# Exoplanet Barcode Extension
+
+Purpose: start exoplanet discovery work with a controlled, reproducible target
+before moving into unclassified TESS/Kepler searches.
+
+## Stage 1: Known Atmosphere Barcode Validation
+
+Run:
+
+```powershell
+python ".\scripts\exoplanet_barcode_pilot.py" `
+  --output-dir ".\outputs\EXOPLANET_BARCODE_PILOT_CANDIDATE_PAPER_PACKAGE_YYYY-MM-DD" `
+  --target "WASP-39 b"
+```
+
+This queries NASA Exoplanet Archive TAP for target parameters, probes Exo.MAST
+for public transmission-spectrum files, downloads the spectra, plots the
+transmission barcode, and ranks easy follow-up targets.
+
+Primary validation target: `WASP-39 b`.
+
+Reason: it has public transmission-spectrum data and strong public JWST
+atmosphere context across visible/near-IR wavelengths.
+
+## Stage 2: Known Transit Recovery Validation
+
+Run:
+
+```powershell
+python ".\scripts\exoplanet_transit_recovery_gate.py" `
+  --target "Kepler-1 b" `
+  --output-dir ".\outputs\EXOPLANET_BARCODE_PILOT_CANDIDATE_PAPER_PACKAGE_YYYY-MM-DD" `
+  --min-period 0.5 `
+  --max-period 5 `
+  --n-periods 7000
+```
+
+This resolves the target through Exo.MAST, downloads the Kepler DV FITS file
+from MAST, runs a local Box Least Squares transit search, and saves a
+periodogram plus folded light curve.
+
+Primary validation target: `Kepler-1 b` / `TrES-2 b`.
+
+## Stage 3: New Candidate Discovery
+
+Only after stages 1 and 2 pass:
+
+Run a scoped TESS candidate pilot:
+
+```powershell
+python ".\scripts\exoplanet_tess_candidate_discovery_pilot.py" `
+  --output-dir ".\outputs\EXOPLANET_TESS_DISCOVERY_PILOT_YYYY-MM-DD" `
+  --max-targets 5 `
+  --max-lc-products-per-target 2 `
+  --min-period 0.5 `
+  --max-period 20 `
+  --n-periods 4500
+```
+
+This queries live NASA Exoplanet Archive TOI records, selects bright
+planet-candidate rows, downloads public TESS light-curve FITS files through
+MAST, runs Box Least Squares, and writes first-pass odd/even and secondary
+eclipse metrics.
+
+1. Select bright, low-crowding TESS/Kepler targets.
+2. Pull mission light curves.
+3. Run BLS/TLS transit search.
+4. Vet false positives with Gaia neighbors, centroid/contamination checks, odd-even depth tests, and secondary eclipse checks.
+5. Promote survivors to the barcode archive check.
+6. If no public spectrum exists, produce an ephemeris and follow-up package.
+
+Claim boundary:
+
+- Stage 1 is an atmosphere-barcode extraction validation.
+- Stage 2 is a known-transit recovery validation.
+- Stage 3 is where new candidate discovery begins.

@@ -1,0 +1,270 @@
+# AI Architecture for Roman/Hubble Microlensing Search
+
+## Mission
+
+Build a Roman-ready and Hubble-compatible system that searches public space-telescope imaging for rare microlensing events in crowded stellar fields. The near-term target is archival Hubble M31 data; the future high-throughput target is Roman WFI public data.
+
+The desired detection is a low-amplitude brightness excursion, potentially around 0.1%, against millions of pixels and heavy blending. The model must separate:
+
+- Microlensing: one-time, usually symmetric, achromatic brightening; a planet adds a short perturbation on the main lensing curve.
+- Variable stars: periodic, quasi-periodic, eruptive, color-dependent, or asymmetric variability.
+- Nonstellar contaminants: cosmic rays, bad pixels, detector persistence, diffraction spikes, moving objects, supernovae, AGN, and subtraction artifacts.
+
+## Scientific Reality Check
+
+Roman is not yet returning public science data. NASA currently lists Roman as no earlier than September 2026 for launch, and STScI Roman documentation says WFI science data will be served through MAST. Roman's planned core microlensing program is the Galactic Bulge Time-Domain Survey, with high-cadence observations of Milky Way bulge fields. Andromeda would require either suitable archival time-domain observations or a future targeted Roman observing program.
+
+Hubble already has rich M31 data, especially PHAT, but PHAT is strongest as a resolved-stellar-population data set rather than a uniform high-cadence transient survey. Use Hubble to build calibration, simulation, artifact rejection, and proof-of-method pipelines; use Roman or dedicated cadence data for large-scale discovery.
+
+Official starting points:
+
+- [NASA Roman launch schedule](https://www.nasa.gov/event/nancy-grace-roman-space-telescope/)
+- [Roman archive in MAST](https://roman-docs.stsci.edu/data-handbook-home/accessing-wfi-data/the-roman-archive-in-mast)
+- [Roman WFI pipelines](https://roman-docs.stsci.edu/data-handbook/roman-wfi-data-pipelines)
+- [Roman Galactic Bulge Time-Domain Survey](https://science.nasa.gov/mission/roman-space-telescope/galactic-bulge-time-domain-survey/)
+- [MAST user documentation](https://outerspace.stsci.edu/display/MASTDOCS/MAST+User+Documentation)
+- [PHAT Hubble M31 data](https://archive.stsci.edu/hlsp/phat)
+
+## System Overview
+
+```mermaid
+flowchart LR
+    A["MAST / HLA / Roman WFI public products"] --> B["Ingestion and provenance"]
+    B --> C["Calibration-aware image store"]
+    C --> D["Astrometric alignment and reference stacks"]
+    D --> E["Difference imaging"]
+    E --> F["Candidate residual grouping"]
+    F --> G["Forced PSF photometry and scene modeling"]
+    G --> H["Hybrid neural model"]
+    H --> I["Physics fits and uncertainty calibration"]
+    I --> J["Ranked candidate database"]
+    J --> K["Human vetting and follow-up packet"]
+```
+
+## Data Layer
+
+Use official archive APIs rather than scraping web pages.
+
+### Hubble
+
+Start with MAST/HLA and high-level science products where available. For M31:
+
+- PHAT for high-quality resolved-star catalogs and imaging context.
+- Additional HST programs with repeated visits, preferably same filter, same field, and enough temporal baseline.
+
+Store:
+
+- Calibrated science images.
+- Drizzled/reference images.
+- Data quality masks.
+- WCS and exposure metadata.
+- Source catalogs and crossmatches.
+
+### Roman
+
+Prepare interfaces for WFI Level 2 calibrated images, Level 3 mosaics, and Level 4 catalogs. The architecture should handle prompt products being overwritten or superseded by later data releases, so every result needs product version, retrieval time, calibration context, and file checksum.
+
+## Preprocessing
+
+1. Normalize metadata into a common schema.
+2. Align exposures onto a common astrometric frame.
+3. Build deep reference stacks per field/filter/season.
+4. Match PSFs before subtraction.
+5. Generate difference images with uncertainty maps.
+6. Mask detector artifacts, saturated stars, diffraction spikes, chip edges, and known bad regions.
+7. Perform forced PSF photometry at every candidate position in every epoch.
+
+For crowded M31 fields, do not depend on aperture photometry alone. Use PSF photometry or scene modeling because unresolved neighbors can mimic low-amplitude changes.
+
+## Candidate Generation
+
+Candidate discovery happens before neural classification:
+
+- Detect positive residuals on difference images.
+- Group residuals spatially and temporally into event candidates.
+- Reject single-epoch defects unless they recur in independent exposures.
+- Reject candidates with measurable linear motion.
+- Crossmatch against known variables, Gaia, SIMBAD/VizieR, and existing MAST catalogs.
+
+Each candidate becomes a packet:
+
+- Time-series cutout cube.
+- Difference-image stamp grid.
+- Multiband forced-photometry light curve.
+- Local crowding and background features.
+- Data quality summary.
+- Crossmatch metadata.
+- Initial analytic model fits.
+
+## Neural Network
+
+Use a hybrid architecture. The network should not be asked to infer astronomy only from pixels.
+
+### Image Branch
+
+Input: `T x B x H x W` cutout tensors, for example 31x31 or 63x63 pixels.
+
+Channels:
+
+- Science image.
+- Reference image.
+- Difference image.
+- Uncertainty map.
+- Data quality mask.
+
+Architecture:
+
+- Shared 2D CNN or small ConvNeXt over each epoch.
+- Temporal aggregation with ConvLSTM, TimeSformer, or attention pooling.
+- Artifact head trained to recognize cosmic rays, bad pixels, edge effects, and subtraction failures.
+
+### Light-Curve Branch
+
+Input: irregular time-series table.
+
+Features:
+
+- Time since first observation.
+- Flux change and uncertainty.
+- Band/filter id.
+- Local background.
+- PSF width or sharpness.
+- Crowd/blend index.
+- Quality flags.
+
+Architecture:
+
+- Time-aware transformer using time-delta encodings.
+- Masked observations so missing bands and irregular cadence are native.
+- Optional Gaussian-process embedding for uncertainty-aware smoothing.
+
+### Physics Branch
+
+Fit interpretable models outside or inside the network:
+
+- Point-source point-lens Paczynski model.
+- Simple finite-source variants.
+- Binary/planetary perturbation residual score.
+- Lomb-Scargle periodogram for variables.
+- Template fits for Cepheids, RR Lyrae, long-period variables, eruptive stars, supernovae, and AGN-like variability.
+
+Feed fit parameters and likelihood deltas into the classifier. This anchors the network to astrophysical shape rather than just empirical pattern recognition.
+
+### Fusion and Outputs
+
+Fuse image, light-curve, and physics embeddings with gated attention.
+
+Outputs:
+
+- Class probabilities:
+  - single-lens microlensing
+  - planetary microlensing perturbation
+  - periodic variable
+  - irregular variable
+  - supernova/AGN
+  - moving object
+  - image artifact
+- Event parameters:
+  - peak time
+  - duration
+  - peak magnification
+  - blend fraction
+  - planetary anomaly duration
+- Uncertainty:
+  - epistemic uncertainty from ensemble or MC dropout
+  - aleatoric uncertainty from photometric noise
+
+## Training Strategy
+
+The rare-event problem must be solved mostly by simulation plus hard-negative mining.
+
+### Positive Examples
+
+- Synthetic microlensing injected into real HST/Roman-like backgrounds.
+- Point-lens events over wide ranges of `t0`, `u0`, `tE`, source flux, blend flux, cadence, and crowding.
+- Planetary perturbations injected as short residual deviations.
+- Known OGLE/MOA microlensing light curves for temporal pretraining, with domain adaptation for space-telescope photometry.
+
+### Negative Examples
+
+- Known variable stars.
+- Real difference-image false positives.
+- Synthetic cosmic rays, bad pixels, persistence, saturation bleed, and misregistration.
+- Supernovae and AGN from time-domain survey catalogs.
+
+### Self-Supervised Pretraining
+
+Pretrain on archive cutouts before labels:
+
+- Masked autoencoding on image stamps.
+- Contrastive learning between epochs of the same field.
+- Sequence reconstruction for non-event baselines.
+
+### Losses
+
+- Focal loss for extreme class imbalance.
+- Regression loss on event parameters for injected positives.
+- Physics consistency regularizer: microlensing candidates should fit achromatic one-time lensing better than variable templates.
+- Contrastive loss to separate artifacts, periodic variables, and lensing curves in embedding space.
+
+## Validation
+
+Do not report plain accuracy. It will be misleading because true events are extremely rare.
+
+Use:
+
+- Injection-recovery efficiency versus amplitude, duration, crowding, and cadence.
+- False positives per detector-day or per square degree.
+- Precision at top 10, top 100, and top 1000 candidates.
+- Calibration curves for candidate probability.
+- Blind human-vetting challenge.
+- Recovery of known microlensing/variable examples where applicable.
+
+## Production Architecture
+
+Recommended stack:
+
+- Python, Astropy, Astroquery, Photutils, DrizzlePac or mission pipeline products.
+- Zarr or cloud-optimized FITS for image tiles.
+- Parquet for photometry tables.
+- PostgreSQL/PostGIS for field footprints and candidate metadata.
+- Dask or Ray for distributed processing.
+- PyTorch for the hybrid model.
+- MLflow or Weights & Biases for model registry.
+- Prefect or Airflow for orchestration.
+
+## Human Vetting Packet
+
+Every high-ranked candidate should include:
+
+- Finder chart.
+- Cutout movie.
+- Difference-image stamp sequence.
+- Multiband light curve with error bars.
+- Best microlensing fit and residuals.
+- Best variable-star fit and residuals.
+- Crossmatches and catalog flags.
+- Local crowding estimate.
+- Injection-recovery context near that field and brightness.
+- Reproducible archive product IDs.
+
+## Minimal Viable Build
+
+1. Select one HST M31 field with repeated observations.
+2. Build the ingestion and provenance database.
+3. Generate reference stacks and difference images.
+4. Inject synthetic microlensing curves into real cutouts.
+5. Train the hybrid model on synthetic positives and real negatives.
+6. Run injection-recovery validation.
+7. Produce a ranked candidate dashboard for human review.
+
+## Discovery Claim Standard
+
+The AI cannot by itself claim an Andromeda planet. A credible candidate needs:
+
+- Reproducible calibrated photometry.
+- A microlensing model favored over variable and artifact models.
+- Achromatic behavior where multiband data exist.
+- No plausible moving-object or detector-artifact explanation.
+- Injection-recovery support showing the signal is detectable in that local crowding/noise regime.
+- Independent review and, where possible, follow-up or archival confirmation.

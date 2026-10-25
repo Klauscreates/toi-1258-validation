@@ -1,0 +1,65 @@
+{
+  "mission_id": "MULTIMESSENGER-GOVERNING-NODES-PILOT",
+  "mission_type": "catalog_survey_and_archive_crossmatch",
+  "objective": "Rank nearby Gaia astrometric systems for massive unseen-companion proxies and apply independent X-ray, time-domain, and known-object gates.",
+  "claim_boundary": "Candidate-ranking only; no proxy is a compact-object classification without luminous-companion, radial-velocity, and epoch-astrometry validation.",
+  "primary_catalog": {
+    "name": "Gaia DR3 non-single-star two-body orbits",
+    "table": "gaiadr3.nss_two_body_orbit",
+    "distance_limit_pc_approx": 200,
+    "minimum_nss_significance": 10
+  },
+  "gates": [
+    {
+      "id": "dynamical_mass_proxy",
+      "archive": "ESA Gaia Archive",
+      "observable": "photocentre orbit and parallax"
+    },
+    {
+      "id": "known_object_rejection",
+      "archive": "SIMBAD",
+      "observable": "existing object identifiers and classifications"
+    },
+    {
+      "id": "xray_counterpart",
+      "archive": "Chandra Source Catalog 2.1",
+      "observable": "positional X-ray counterpart within 5 arcsec"
+    },
+    {
+      "id": "time_domain_coverage",
+      "archive": "MAST/TESS",
+      "observable": "available target and full-frame observations"
+    },
+    {
+      "id": "spectral_chemistry",
+      "archive": "MAST/HST/JWST or other calibrated spectroscopic archive",
+      "observable": "molecular bands after an astrophysical planet is established",
+      "status": "follow_up_only"
+    },
+    {
+      "id": "weak_lensing_structure",
+      "archive": "ESA Euclid Q1",
+      "observable": "extragalactic weak-lensing and structure maps",
+      "status": "separate_branch"
+    }
+  ],
+  "implementation": "scripts/multimessenger_governing_nodes_pilot.py",
+  "latest_output": "outputs/MULTIMESSENGER_GOVERNING_NODES_PILOT_2026-07-18",
+  "tess_pixel_gate": {
+    "implementation": "scripts/tess_high_mass_proxy_pixel_parser.py",
+    "output": "outputs/TESS_HIGH_MASS_PROXY_PIXEL_GATE_2026-07-18",
+    "targets_processed": 16,
+    "sector_cubes_processed": 73,
+    "raw_cutout_cache": "data/external/tess_multimessenger_cutouts",
+    "classification_boundary": "BLS outputs are periodic diagnostics, not validated transits."
+  },
+  "hd85563_difference_image_gate": {
+    "implementation": "scripts/hd85563_difference_image_localization.py",
+    "output": "outputs/HD85563_DIFFERENCE_IMAGE_GATE_2026-07-18",
+    "usable_sectors": 4,
+    "target_localized_sectors": 0,
+    "off_target_sectors": 4,
+    "verdict": "The 19.320684-day aperture diagnostic fails target localization; sector deficits map to different off-target sky positions.",
+    "cold_case_registry": "outputs/HD85563_DIFFERENCE_IMAGE_GATE_2026-07-18/tables/high_mass_proxy_rv_cold_cases.csv"
+  }
+}

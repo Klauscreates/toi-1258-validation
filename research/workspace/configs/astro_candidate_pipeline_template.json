@@ -1,0 +1,7 @@
+{
+  "pipeline_path": "./pipelines/astro_candidate_pipeline",
+  "template": "TARGET_MANIFEST_TEMPLATE.json",
+  "reference_case": "IRPCA-002",
+  "reference_package": "./outputs/IRPCA002_CANDIDATE_PAPER_PACKAGE_2026-06-13",
+  "usage": "Copy TARGET_MANIFEST_TEMPLATE.json for each new target, fill in coordinates/search geometry, then execute PLAYBOOK.md from Phase 0 through Phase 10."
+}

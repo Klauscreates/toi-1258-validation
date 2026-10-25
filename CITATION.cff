@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this research software and the original archives and methods separately."
+type: software
+repository-code: "https://github.com/Klauscreates/toi-1258-validation"
+url: "https://github.com/Klauscreates/toi-1258-validation"
+title: "TOI-1258.01 | Transit Validation"
+authors:
+  - family-names: "Stoloff"
+    given-names: "Nikolai Klaus"
+version: 0.1.0
+abstract: "Reproducible evidence checks for the TOI-1258.01 statistical-validation analysis."
+keywords:
+  - astronomy
+  - reproducibility
+  - photometry
+

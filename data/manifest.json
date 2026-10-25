@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "packaged_on": "2026-10-25",
+  "scope": "Selected historical evidence and reference source; not a fresh raw-data reduction",
+  "files": [
+    {
+      "path": "data/triceratops_seed_sweep_N1000000_summary.csv",
+      "source_file": "triceratops_seed_sweep_N1000000_summary.csv",
+      "source_collection": "tables",
+      "original_sha256": "7987e10e630281c782a7123a6c0bfd24e6a287281daaadbc5cccaedf6e2d9242",
+      "sha256": "763f2c29d432b68c49270cdad52a6a31959acc446f8ef12796882a80effd040c",
+      "bytes": 686,
+      "rows": 5,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/stitched_bls_summary.csv",
+      "source_file": "stitched_bls_summary.csv",
+      "source_collection": "tables",
+      "original_sha256": "9a4834e42891d9ced2253bd951a089462b46bc0d518e0681e9e998563bb44184",
+      "sha256": "76622a43f32fd3a46a0bfcbdddcd96eba235ea34c388701148fd48f416b7651f",
+      "bytes": 308,
+      "rows": 1,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/stitched_transit_metrics.csv",
+      "source_file": "stitched_transit_metrics.csv",
+      "source_collection": "tables",
+      "original_sha256": "7ca674af76c876e7a9961aabd42e9760d210dad799ba89677a77ad5f65585521",
+      "sha256": "58fc300eb2c3f1e252a950afb6ab9c3389674742ab2fa7936a05ea6df00a9ebb",
+      "bytes": 519,
+      "rows": 1,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/stitched_transit_depth_by_sector.csv",
+      "source_file": "stitched_transit_depth_by_sector.csv",
+      "source_collection": "tables",
+      "original_sha256": "bcef2c19c79f553f093697a4a346b80d5e42490ff5422ef70eec288a4dce8ecf",
+      "sha256": "f93810c053592560fa2694cbed5e4fa4ec1eb06a83279eb3b7b041730ccf03a0",
+      "bytes": 577,
+      "rows": 12,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/spoc_dv_centroid_summary.csv",
+      "source_file": "spoc_dv_centroid_summary.csv",
+      "source_collection": "tables",
+      "original_sha256": "54636fc520f5a25a256b240c5e96bb09e5801886b11e5d4ee0c00ad90861c25c",
+      "sha256": "ae2231ce0df76cd0692714748714e8e02130f670e78a17551f4f089878454d34",
+      "bytes": 7647,
+      "rows": 16,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/triceratops_folded_binned_lightcurve.csv",
+      "source_file": "triceratops_folded_binned_lightcurve.csv",
+      "source_collection": "tables",
+      "original_sha256": "1f87116e5984e612bcba6e70d6b10b6561695479f53b7b74272ed4371ecc55d7",
+      "sha256": "b00a7e8c66dbb08483573fa6eccc2ed4f08394c2b817147f51fb5d16fff230ad",
+      "bytes": 12521,
+      "rows": 160,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/triceratops_contrast_curve_562nm.csv",
+      "source_file": "triceratops_contrast_curve_562nm.csv",
+      "source_collection": "tables",
+      "original_sha256": "1cbd05b689873666c89a7b87830a0df4314ee386edfc7bd7d35c63906bf17485",
+      "sha256": "73e41d6e306c5be78943090c6e7b73f164c87bfb8ffda48bb41baeefa60c69dc",
+      "bytes": 2106,
+      "rows": 119,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/triceratops_contrast_curve_832nm.csv",
+      "source_file": "triceratops_contrast_curve_832nm.csv",
+      "source_collection": "tables",
+      "original_sha256": "5435a6cf44b2414aef09195dd0e896c8a96b18ecf247cc2cf3072ce4af83226d",
+      "sha256": "9bf7b04628af983d91f18e4e1b57d0ebea0192a8d15f71c55478bbcf64e32e8f",
+      "bytes": 2092,
+      "rows": 119,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/mast_tess_product_inventory.csv",
+      "source_file": "mast_tess_product_inventory.csv",
+      "source_collection": "tables",
+      "original_sha256": "dc1a71518c4f4484673c1d3554401283eb61ee48d47a181cb32f70c5b9ffa512",
+      "sha256": "570bd06b8a04640063b9830339f879867c571c63869ad7aeea68b099508618b2",
+      "bytes": 11208,
+      "rows": 120,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/probabilities_full_seed_1258.csv",
+      "source_file": "probabilities_full_seed_1258.csv",
+      "source_collection": "logs",
+      "original_sha256": "b718116629208612ce9b33e44b708bf31b41d1069d4da489b07c9037ea72c321",
+      "sha256": "1686c67e7c87b40459db1cbdd45dafa9342b067593d3dc2a0f01383780dd78cd",
+      "bytes": 4242,
+      "rows": 24,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/probabilities_full_seed_1259.csv",
+      "source_file": "probabilities_full_seed_1259.csv",
+      "source_collection": "logs",
+      "original_sha256": "525700ccb342c74e65654a06345a8e3ec53a7710161af0d7219d182dbe4c0f9d",
+      "sha256": "05e5604c89ccbf2ccf3a266f41d1252f2c35175afa2387aeb7c96d78d4cc2728",
+      "bytes": 4250,
+      "rows": 24,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/probabilities_full_seed_1260.csv",
+      "source_file": "probabilities_full_seed_1260.csv",
+      "source_collection": "logs",
+      "original_sha256": "503ab59d05a2200e498cf884566f8ed6542c3b207d662913e069837c71e90398",
+      "sha256": "2a6040ced4bcaac809ef17b8f19525c67434ab54547393d5bade51302a741ceb",
+      "bytes": 4244,
+      "rows": 24,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/probabilities_full_seed_1261.csv",
+      "source_file": "probabilities_full_seed_1261.csv",
+      "source_collection": "logs",
+      "original_sha256": "f0fa64e09e20ce6639a43e34b7a5e2acb3ebff77200056c4698dd86aec49cae7",
+      "sha256": "983de01c2eb585524fe92c0cf2e24b08ffedd239389bbd84bd19de022cd5598a",
+      "bytes": 4244,
+      "rows": 24,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "data/probabilities_full_seed_1262.csv",
+      "source_file": "probabilities_full_seed_1262.csv",
+      "source_collection": "logs",
+      "original_sha256": "946f9ca30e3fdfedc55a06d0afd936b3f2ad374a757d0e7c9b7b2da5c627c498",
+      "sha256": "80333958318c2c1f35d1482f75290c463e6be88793d92359722b110269c6aa19",
+      "bytes": 4237,
+      "rows": 24,
+      "removed_columns": [],
+      "transformation": "CSV serialization; absolute path cells reduced to filename; scientific numeric strings retained"
+    },
+    {
+      "path": "research/exoplanet_toi_blocker_clearance.py",
+      "source_file": "exoplanet_toi_blocker_clearance.py",
+      "source_collection": "scripts",
+      "original_sha256": "9b3ab40c6ebdebc1dfb7e7548509f680097379011b66c55f5f23eda57140efbe",
+      "sha256": "d16b53edae8ff2eb0d5a146a49be39d48569f8c5970bb8fb5c6bd16de3189585",
+      "bytes": 20056,
+      "transformation": "Machine-location prefixes changed to relative external-data locations; historical logic retained"
+    },
+    {
+      "path": "research/exoplanet_toi_centroid_stitch_gate.py",
+      "source_file": "exoplanet_toi_centroid_stitch_gate.py",
+      "source_collection": "scripts",
+      "original_sha256": "65c26518744f550f6799c41ec76f7c9db08d1fdad1842b77eea36d6ec11888ae",
+      "sha256": "c99e9eb93e151a76e12fd3f19d36dce2be8733b529f68176bffd22ec2a575da9",
+      "bytes": 41191,
+      "transformation": "Machine-location prefixes changed to relative external-data locations; historical logic retained"
+    },
+    {
+      "path": "research/exoplanet_toi_final_boss_gates.py",
+      "source_file": "exoplanet_toi_final_boss_gates.py",
+      "source_collection": "scripts",
+      "original_sha256": "1c5faad1dd9a3ddd4a769beb2856cbf3dd4721a2ab2af219f7cd4a51c0c51306",
+      "sha256": "6c0a7a64aaf31c09dae989a56eea79fdd5e927338d58ee9f78707befdee52624",
+      "bytes": 26953,
+      "transformation": "Machine-location prefixes changed to relative external-data locations; historical logic retained"
+    },
+    {
+      "path": "research/exoplanet_toi_spoc_dv_parser.py",
+      "source_file": "exoplanet_toi_spoc_dv_parser.py",
+      "source_collection": "scripts",
+      "original_sha256": "fc42ba798726f5f61db98d84762f7c4fe033401e7ca9def9671ba5f6c9051f02",
+      "sha256": "fc42ba798726f5f61db98d84762f7c4fe033401e7ca9def9671ba5f6c9051f02",
+      "bytes": 8701,
+      "transformation": "Machine-location prefixes changed to relative external-data locations; historical logic retained"
+    }
+  ]
+}

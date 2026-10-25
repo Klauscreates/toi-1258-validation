@@ -1,0 +1,79 @@
+{
+  "mission_name": "example_mission_name",
+  "target_label": "candidate_label",
+  "primary": {
+    "name": "Primary Star or Object",
+    "ra_deg": 0.0,
+    "dec_deg": 0.0,
+    "epoch": "J2000",
+    "proper_motion_ra_mas_yr": null,
+    "proper_motion_dec_mas_yr": null,
+    "distance_pc": null
+  },
+  "search_geometry": {
+    "mode": "relative_offset_or_annulus",
+    "separation_arcsec": null,
+    "pa_deg": null,
+    "annulus_inner_arcsec": null,
+    "annulus_outer_arcsec": null,
+    "preferred_radius_arcsec": null,
+    "preferred_pa_deg": null,
+    "east_arcsec": null,
+    "north_arcsec": null,
+    "notes": "Describe the geometric instruction or target region."
+  },
+  "hypothesis": {
+    "working_interpretation": "candidate / companion / transient / residual / unknown",
+    "motivation": "Why are we looking here?",
+    "nonstandard_search_heuristic": "Optional. Keep separate from measured evidence.",
+    "expected_wavelengths": [
+      "near_ir",
+      "mid_ir",
+      "polarimetry",
+      "spectroscopy"
+    ]
+  },
+  "archives_to_query": {
+    "mast": true,
+    "eso": true,
+    "koa": true,
+    "gaia": true,
+    "other": []
+  },
+  "required_gates": [
+    "geometry_lock",
+    "archive_inventory",
+    "high_contrast_quicklook",
+    "same_radius_controls",
+    "detector_lock_stress",
+    "pca_klip_test",
+    "fake_source_injection",
+    "thermal_gate",
+    "polarimetry_gate",
+    "spectroscopy_gate",
+    "interferometry_or_fiber_gate",
+    "evidence_package"
+  ],
+  "claim_thresholds": {
+    "candidate_minimum": [
+      "coordinate-specific signal",
+      "same-radius control comparison",
+      "at least one artifact stress test"
+    ],
+    "strong_candidate": [
+      "independent instrument or epoch support",
+      "detector-fixed control quiet",
+      "negative evidence documented"
+    ],
+    "physical_classification": [
+      "isolated spectrum or color/SED",
+      "multi-epoch astrometry or independent telescope confirmation"
+    ]
+  },
+  "output": {
+    "base_dir": "outputs",
+    "package_prefix": "TARGET_CANDIDATE_PAPER_PACKAGE",
+    "date": "YYYY-MM-DD"
+  }
+}
+
