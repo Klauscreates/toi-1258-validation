@@ -29,6 +29,25 @@ All numbers below are in [outputs/SUMMARY.json](outputs/SUMMARY.json), which
 **Transit depth (12 sectors, S14–S74):** PDCSAP 792 ± 13 ppm, per-sector
 χ² = 16.4 for 11 degrees of freedom.
 
+**Transit fit** ([outputs/transit_fit.json](outputs/transit_fit.json), `scripts/fit_transit.py`):
+this is an emcee fit of the 25 transits with two-sided baselines (17,097 points). The free
+parameters are T0, P, Rp/R★, b, ρ★, the Kipping q1 and q2, and jitter. The orbit is circular.
+The run used 40 walkers for 60,000 steps; the longest autocorrelation time is 651 steps, so
+the post-burn chain spans at least 45 autocorrelation times. Thinned posterior samples are
+in `outputs/transit_fit.chain.npy`.
+
+- P = 10.261314 ± 0.000011 d, and T0 = 2459430.6513 ± 0.0005 BJD_TDB.
+- Rp/R★ = 0.0273 (+0.0005, −0.0004) and b = 0.32 (+0.23, −0.22).
+- Rp = 4.44 ± 0.22 R⊕, using R★ = 1.49 ± 0.07 R☉ from TIC v8.
+- The fitted ρ★ = 0.56 (+0.09, −0.18) g cm⁻³ agrees with the TIC density of the target
+  (0.69 ± 0.15) at −0.7σ, which is evidence that the transit is on the target.
+
+**Odd/even and secondary** ([outputs/vetting_checks.json](outputs/vetting_checks.json)):
+the odd transits are 784 ± 17 ppm and the even transits 796 ± 18 ppm, a 0.5σ difference.
+At phase 0.5 the flux change is −21 ± 12 ppm, so any secondary eclipse is below 35 ppm (3σ).
+
+**Figure** for the Research Note: `scripts/make_figure.py`.
+
 **Depth versus aperture:** from a 2 px to a 4 px radius, the depth gets
 shallower in 6 of 10 usable sectors (median change −24 ppm). That is the
 dilution pattern expected for an on-target source. Only S74 gets deeper
@@ -56,6 +75,7 @@ PDCSAP light curve in 10-minute bins):
 |---|---|---|---|
 | Gemini 562 + 832 nm, Gaia DR3 background (public data only) | 5 | 4.7×10⁻⁶ | 1.1×10⁻¹⁵ |
 | Gemini + Palomar Kcont, Gaia DR3 background | 5 | 4.7×10⁻⁶ | 1.1×10⁻¹⁵ |
+| Gemini 562 + 832 nm, frozen historical TRILEGAL | 3 | 1.6×10⁻¹⁰ | 5.1×10⁻¹⁵ |
 | Gemini + Palomar Kcont, frozen historical TRILEGAL | 3 | 1.6×10⁻¹⁰ | 5.1×10⁻¹⁵ |
 | No contrast curves (sensitivity check) | 3 | 2.6×10⁻⁴ | 9.9×10⁻¹⁶ |
 
@@ -104,7 +124,10 @@ python rerun/scripts/depth_aperture.py ../toi1258-data/tess ../toi1258-out/depth
 python rerun/scripts/diff_centroids.py ../toi1258-data/tess ../toi1258-out/diff_centroids.json
 python rerun/scripts/lco_check.py ../toi1258-data/exofop/TIC288132261-01_20220508_LCO-McD-1m0_zs_measurements.tbl ../toi1258-out/lco_check.json
 python rerun/scripts/run_fpp.py --data ../toi1258-data --inputs ../toi1258-out/inputs --out ../toi1258-out/fpp_gemini --curves gemini
+python rerun/scripts/fit_transit.py ../toi1258-data rerun/outputs/transit_fit.json --steps 60000
+python rerun/scripts/vetting_checks.py ../toi1258-data rerun/outputs/transit_fit.json rerun/outputs/vetting_checks.json
 python rerun/scripts/summarize.py rerun/outputs data/spoc_dv_centroid_summary.csv
+python rerun/scripts/make_figure.py ../toi1258-data . ../toi1258-out/figure.png
 ```
 
 `prep_inputs.py` expects these ExoFOP files in `../toi1258-data/exofop/`:
