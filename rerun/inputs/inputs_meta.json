@@ -1,0 +1,36 @@
+{
+ "n_points_unbinned": 17097,
+ "n_bins": 144,
+ "bin_minutes": 10.0,
+ "flux_err_per_bin": 6.134297498729653e-05,
+ "central_depth_ppm": 792.4832988807085,
+ "contrast_checks": {
+  "562": {
+   "exofop_sep_range": [
+    0.0,
+    1.17
+   ],
+   "exofop_dmag_at_0p5": 4.040983,
+   "historical_col0_equals_col1": true,
+   "historical_col0_equals_exofop_dmag": true,
+   "historical_dmag_at_0p5": 0.5
+  },
+  "832": {
+   "exofop_sep_range": [
+    0.0,
+    1.17
+   ],
+   "exofop_dmag_at_0p5": 6.385766,
+   "historical_col0_equals_col1": true,
+   "historical_col0_equals_exofop_dmag": true,
+   "historical_dmag_at_0p5": 0.5
+  },
+  "palomar_K": {
+   "sep_range": [
+    0.0,
+    9.865
+   ],
+   "dmag_at_0p5": 6.785
+  }
+ }
+}

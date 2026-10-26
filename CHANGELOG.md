@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.3.0 - 2026-10-25
+
+- Corrected rerun under `rerun/`, with scripts, corrected Gemini contrast
+  curves, a folded PDCSAP light curve, and all result tables plus a
+  regenerable `SUMMARY.json`.
+- Found that both historical contrast-curve CSVs had their separation column
+  overwritten with Δmag. They are documented and kept unchanged for provenance.
+- Reran TRICERATOPS at upstream commit d20875c27d: FPP < 5×10⁻⁶, NFPP ≈ 10⁻¹⁵,
+  with public data only and with the 2026 Palomar curve, using Gaia DR3 and
+  frozen TRILEGAL backgrounds.
+- Added depth-versus-aperture, difference-image centroid (TIC 288132263
+  excluded at 8.5σ) and LCO light-curve checks.
+- Historical probabilities are superseded. The offline audit of the historical
+  tables is unchanged.
+
 ## 0.2.0 - 2026-10-25
 
 - Exact input manifests and protected data-release retrieval.

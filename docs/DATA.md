@@ -13,7 +13,7 @@ to filenames without rounding scientific values.
 | triceratops_folded_binned_lightcurve.csv | Time from mid-transit in days, normalized flux/error |
 | triceratops_seed_sweep_N1000000_summary.csv | Seed identifiers, sample counts, historical probabilities |
 | probabilities_full_seed_*.csv | Full scenario posteriors, not simulated replacement data |
-| triceratops_contrast_curve_*.csv | Historical contrast curves; see column names for separation and delta magnitude |
+| triceratops_contrast_curve_*.csv | Historical contrast curves, **corrupted**: both columns hold Δmag, and the separation column was lost. Kept for provenance only. Corrected curves are in [rerun/inputs](../rerun/inputs) |
 | spoc_dv_centroid_summary.csv | SPOC offsets and errors in arcsec; multiple pipeline products |
 | mast_tess_product_inventory.csv | Archived product identifiers for reacquisition |
 
