@@ -72,7 +72,7 @@ outside = box(t, tc1) < 0.01
 out["T2_in_minus_out_ppt"] = float((np.nanmean(f2[outside]) - np.nanmean(f2[inside])) * 1e3)
 out["T2_point_rms_ppt"] = float(np.nanstd(f2[outside]) * 1e3)
 out["T2_fit"] = fit(col["rel_flux_T2"], col["rel_flux_err_T2"])
-# TRICERATOPS tdepth for TIC 288132263 (TESS band), from results/fpp_main/stars.csv
+# TRICERATOPS tdepth for TIC 288132263 (TESS band), from rerun/outputs/fpp_main/stars.csv
 out["T2_required_depth_ppt_if_source"] = 45.8
 print(json.dumps(out, indent=1))
 Path(sys.argv[2]).write_text(json.dumps(out, indent=1))

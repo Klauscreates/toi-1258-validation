@@ -23,7 +23,7 @@ documented below and in [scientific status](../docs/SCIENCE.md).
 
 ## Results
 
-All numbers below are in [results/SUMMARY.json](results/SUMMARY.json), which
+All numbers below are in [outputs/SUMMARY.json](outputs/SUMMARY.json), which
 `scripts/summarize.py` regenerates from the committed result files.
 
 **Transit depth (12 sectors, S14–S74):** PDCSAP 792 ± 13 ppm, per-sector
@@ -71,7 +71,7 @@ the second half of the transit and egress. A simple trapezoid fit gives
 1.5 ± 0.7 ppt on target, a marginal detection, so it is not used as
 independent on-target confirmation. A box fit to T2's light curve shows an
 apparent 21 ppt "dip", but T2 brightens smoothly through the night while the
-sky background halves ([results/lco_T1_T2.png](results/lco_T1_T2.png)). That
+sky background halves ([outputs/lco_T1_T2.png](outputs/lco_T1_T2.png)). That
 is sky-subtraction error on a faint star in egress-only coverage, not an
 eclipse. KeplerCam (2021) saturated the target. Upstream TRICERATOPS has no
 external light-curve input. The TRICERATOPS+ fork does, but it predates the
@@ -104,7 +104,7 @@ python rerun/scripts/depth_aperture.py ../toi1258-data/tess ../toi1258-out/depth
 python rerun/scripts/diff_centroids.py ../toi1258-data/tess ../toi1258-out/diff_centroids.json
 python rerun/scripts/lco_check.py ../toi1258-data/exofop/TIC288132261-01_20220508_LCO-McD-1m0_zs_measurements.tbl ../toi1258-out/lco_check.json
 python rerun/scripts/run_fpp.py --data ../toi1258-data --inputs ../toi1258-out/inputs --out ../toi1258-out/fpp_gemini --curves gemini
-python rerun/scripts/summarize.py rerun/results data/spoc_dv_centroid_summary.csv
+python rerun/scripts/summarize.py rerun/outputs data/spoc_dv_centroid_summary.csv
 ```
 
 `prep_inputs.py` expects these ExoFOP files in `../toi1258-data/exofop/`:

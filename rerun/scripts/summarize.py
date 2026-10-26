@@ -1,7 +1,7 @@
 """Reduce the rerun outputs to the numbers quoted in rerun/README.md.
 
-Usage: python summarize.py RESULTS_DIR SPOC_DV_CENTROID_CSV
-Writes RESULTS_DIR/SUMMARY.json. Standard library only.
+Usage: python summarize.py OUTPUTS_DIR SPOC_DV_CENTROID_CSV
+Writes OUTPUTS_DIR/SUMMARY.json. Standard library only.
 """
 import csv
 import json
