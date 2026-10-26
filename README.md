@@ -85,5 +85,5 @@ Cite the original archives and methods separately. This repository is not a
 claim of peer review, acceptance, confirmed discovery, or priority.
 
 [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) ·
-[Changelog](CHANGELOG.md) · [Licensing pending](LICENSE_NOTICE.md)
+[Changelog](CHANGELOG.md) · [MIT + CC BY 4.0 licensing](LICENSE_NOTICE.md)
 
