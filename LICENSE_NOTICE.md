@@ -1,18 +1,15 @@
 # Licensing and Attribution
 
-Licensing is pending author approval. No open-source license grant is asserted
-by this package. Do not interpret public visibility as an MIT license.
+| Material | License |
+| --- | --- |
+| Original code: `src/`, `tests/`, `tools/`, `rerun/scripts/`, and original project scripts under `research/` | [MIT](LICENSE) |
+| Original documentation and derived result tables: `docs/`, the READMEs, `rerun/outputs/`, `examples/`, `figures/` | [CC BY 4.0](LICENSE-CC-BY-4.0.txt) |
+| Historical TRICERATOPS module under `research/third_party/triceratops/` | Its upstream MIT license and attribution |
+| Third-party data | Unchanged; see below |
 
-Original project code and documentation are attributed to Nikolai Klaus Stoloff.
-Archive products, calibration files, external libraries, and third-party material
-retain their respective terms. They are not relicensed here. Third-party program
-binaries are not bundled. The historical modified TRICERATOPS likelihood module
-is retained under `research/third_party/triceratops/` with its upstream MIT
-license and attribution. That license applies to that third-party material,
-not automatically to the original project code.
+Third-party data keep their original terms and are **not** relicensed here:
+- **TESS** products from MAST.
+- **Gaia** catalog values.
+- **ExoFOP** follow-up data, including the Gemini/'Alopeke speckle contrast curves in `rerun/inputs/` (2020-02-15, PI Crossfield). Cite these through ExoFOP (doi:10.26134/ExoFOP5) as its data-use policy describes.
 
-Before public release, choose a license for original code and separately review
-the redistribution terms for the derived data. Cite the originating missions and
-methods listed in [data provenance](docs/DATA.md). A software citation is not a
-claim of journal publication, independent confirmation, or discovery priority.
-
+If you use this work, cite the repository ([CITATION.cff](CITATION.cff)) and the original missions and methods listed in [data provenance](docs/DATA.md). A software citation is not a claim of journal publication, independent confirmation, or discovery priority.

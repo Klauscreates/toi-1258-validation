@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.3.1 - 2026-10-26
+
+- Licensing: original code is MIT ([LICENSE](LICENSE)). Original documentation
+  and derived result tables are CC BY 4.0 ([LICENSE-CC-BY-4.0.txt](LICENSE-CC-BY-4.0.txt)).
+  Third-party data and the TRICERATOPS module keep their own terms (see
+  [LICENSE_NOTICE.md](LICENSE_NOTICE.md)).
+- Transit fit (`rerun/scripts/fit_transit.py`): P = 10.261314(11) d,
+  Rp = 4.44 ± 0.22 R⊕, and a stellar density consistent with the target.
+  Posterior samples are included.
+- Odd/even and secondary-eclipse checks, the Research Note figure script, and a
+  Gemini-only frozen-TRILEGAL FPP run.
+
 ## 0.3.0 - 2026-10-25
 
 - Corrected rerun under `rerun/`, with scripts, corrected Gemini contrast
