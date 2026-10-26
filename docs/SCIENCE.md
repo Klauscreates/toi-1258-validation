@@ -1,5 +1,22 @@
 # Scientific Status
 
+## Current result (corrected rerun, 2026-10-25)
+
+The historical probabilities below are **superseded** by the
+[corrected rerun](../rerun/README.md). The historical Gemini contrast curves
+were corrupted: their separation column was overwritten with Δmag, so the run
+effectively had no imaging constraint. The historical TRICERATOPS module also
+predates the upstream 2026 likelihood and prior fixes.
+
+The rerun uses current upstream TRICERATOPS, corrected contrast curves and a
+freshly folded SPOC PDCSAP light curve. It gives FPP < 5×10⁻⁶ and NFPP ≈ 10⁻¹⁵
+in every seed, both with public data only (TESS plus Gemini 2020) and with the
+2026 Palomar AO curve added. The SPOC multi-sector centroid excludes
+TIC 288132263 at 5.8σ, and per-sector difference images exclude it at 8.5σ.
+PDCSAP per-sector depths are consistent (792 ± 13 ppm). These are statistical
+validation results, not an RV mass, and they are conditional on the scenario
+set, the priors and the inputs described in the rerun README.
+
 ## Historical evidence
 
 The retained analysis snapshot reports a twelve-sector TESS signal near
@@ -33,10 +50,16 @@ guarantee of journal acceptance.
 
 ## Before an independent validation claim
 
-- Reproduce the complete likelihood run with a reviewed software environment.
-- Verify light-curve detrending, contamination, centroid and imaging assumptions.
-- Audit the historical Python compatibility patch used for TRICERATOPS.
-- Refresh the literature and archive status with dated queries.
+- ~~Reproduce the complete likelihood run with a reviewed software environment.~~
+  Done in the [corrected rerun](../rerun/README.md), with upstream TRICERATOPS
+  pinned to a commit.
+- ~~Verify light-curve detrending, contamination, centroid and imaging assumptions.~~
+  Done there. This check found the contrast-curve corruption.
+- ~~Audit the historical Python compatibility patch used for TRICERATOPS.~~
+  It was an older upstream module, replaced by current upstream.
+- Refresh the literature and archive status with dated queries. As of
+  2026-10-25 it is TFOPWG "PC", and no publication was found.
+- Coordinate with the TFOP data owners before publishing (ExoFOP data-use policy).
 - Seek independent mass constraints where available.
 
 Methods: [TRICERATOPS](https://github.com/stevengiacalone/triceratops),

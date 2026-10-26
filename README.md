@@ -1,8 +1,14 @@
 # TOI-1258.01 | Transit Validation
 
-**Historical statistical-validation evidence; not a new confirmation.**
+**Statistical-validation evidence; not a mass measurement or dynamical confirmation.**
 
-A transparent transit-validation evidence package for TIC 288132261. It connects TESS photometry, centroid diagnostics, contrast curves, and saved TRICERATOPS scenario probabilities without treating statistical validation as a mass measurement.
+A transparent transit-validation evidence package for TIC 288132261. It connects TESS photometry, centroid diagnostics, contrast curves, and TRICERATOPS scenario probabilities without treating statistical validation as a mass measurement.
+
+> **Corrected rerun (2026-10-25):** the historical TRICERATOPS probabilities are
+> superseded. The historical contrast curves were corrupted, and the
+> TRICERATOPS module predated the upstream 2026 fixes. With current TRICERATOPS
+> and corrected inputs, FPP < 5×10⁻⁶ and NFPP ≈ 10⁻¹⁵. See the
+> [corrected rerun](rerun/README.md).
 
 ![Evidence overview](figures/overview.png)
 

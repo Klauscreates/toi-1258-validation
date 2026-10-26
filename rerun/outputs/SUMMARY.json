@@ -1,0 +1,355 @@
+{
+ "pdcsap_depth_ppm": {
+  "mean": 792.2,
+  "err": 12.8,
+  "chi2": 16.4,
+  "dof": 11
+ },
+ "sap_depth_ppm": {
+  "mean": 735.4,
+  "err": 13.9,
+  "chi2": 106.7,
+  "dof": 11
+ },
+ "r3.0_depth_ppm": {
+  "mean": 752.0,
+  "err": 14.0,
+  "chi2": 33.7,
+  "dof": 11
+ },
+ "aperture_r2_to_r4_change_ppm": {
+  "per_sector": {
+   "14": -98.9,
+   "20": 16.4,
+   "21": -72.1,
+   "26": 9.6,
+   "40": -17.1,
+   "41": -116.1,
+   "47": 1.8,
+   "48": -30.0,
+   "53": -58.6,
+   "60": -192.3,
+   "73": -675.6,
+   "74": 53.2
+  },
+  "usable_sectors": 10,
+  "shallower": 6,
+  "median": -23.6,
+  "excluded_sectors": [
+   60,
+   73
+  ]
+ },
+ "difference_image_centroid": {
+  "sectors": 10,
+  "mean_offset_arcsec": [
+   3.02,
+   -1.29
+  ],
+  "per_axis_err_arcsec": 1.77,
+  "t2_offset_arcsec": [
+   15.33,
+   7.41
+  ],
+  "t2_exclusion_sigma": 8.5
+ },
+ "spoc_dv_centroids": [
+  {
+   "sectors": "s0014-s0014",
+   "offset_arcsec": [
+    -0.12798822,
+    -1.6884587
+   ],
+   "err_arcsec": [
+    2.5031612,
+    2.5788379
+   ],
+   "sigma_from_target": 0.7,
+   "sigma_from_t2": 7.1
+  },
+  {
+   "sectors": "s0014-s0014",
+   "offset_arcsec": [
+    0.10519205,
+    -1.4806775
+   ],
+   "err_arcsec": [
+    2.5028899,
+    2.5711348
+   ],
+   "sigma_from_target": 0.6,
+   "sigma_from_t2": 7.0
+  },
+  {
+   "sectors": "s0014-s0023",
+   "offset_arcsec": [
+    -0.22742267,
+    -1.1866385
+   ],
+   "err_arcsec": [
+    2.5597951,
+    4.072178
+   ],
+   "sigma_from_target": 0.3,
+   "sigma_from_t2": 6.4
+  },
+  {
+   "sectors": "s0014-s0026",
+   "offset_arcsec": [
+    0.26641735,
+    -1.7656226
+   ],
+   "err_arcsec": [
+    2.6648717,
+    4.430411
+   ],
+   "sigma_from_target": 0.4,
+   "sigma_from_t2": 6.0
+  },
+  {
+   "sectors": "s0014-s0041",
+   "offset_arcsec": [
+    -0.27101266,
+    -2.1548245
+   ],
+   "err_arcsec": [
+    2.5814114,
+    3.003482
+   ],
+   "sigma_from_target": 0.7,
+   "sigma_from_t2": 6.8
+  },
+  {
+   "sectors": "s0014-s0050",
+   "offset_arcsec": [
+    -0.037102174,
+    -2.7307367
+   ],
+   "err_arcsec": [
+    2.8765073,
+    3.1150928
+   ],
+   "sigma_from_target": 0.9,
+   "sigma_from_t2": 6.3
+  },
+  {
+   "sectors": "s0014-s0055",
+   "offset_arcsec": [
+    -0.04064083,
+    -0.88637924
+   ],
+   "err_arcsec": [
+    2.9080267,
+    3.49887
+   ],
+   "sigma_from_target": 0.3,
+   "sigma_from_t2": 5.8
+  },
+  {
+   "sectors": "s0014-s0060",
+   "offset_arcsec": [
+    0.45732886,
+    -1.4154491
+   ],
+   "err_arcsec": [
+    2.9571555,
+    3.5757082
+   ],
+   "sigma_from_target": 0.4,
+   "sigma_from_t2": 5.6
+  },
+  {
+   "sectors": "s0014-s0078",
+   "offset_arcsec": [
+    -0.385727,
+    -0.34569544
+   ],
+   "err_arcsec": [
+    3.0156138,
+    2.9902985
+   ],
+   "sigma_from_target": 0.2,
+   "sigma_from_t2": 5.8
+  },
+  {
+   "sectors": "s0021-s0021",
+   "offset_arcsec": [
+    0.13647926,
+    -2.4036856
+   ],
+   "err_arcsec": [
+    2.5009356,
+    2.530001
+   ],
+   "sigma_from_target": 1.0,
+   "sigma_from_t2": 7.2
+  },
+  {
+   "sectors": "s0026-s0026",
+   "offset_arcsec": [
+    2.371937,
+    -9.176518
+   ],
+   "err_arcsec": [
+    2.5056326,
+    2.7250173
+   ],
+   "sigma_from_target": 3.5,
+   "sigma_from_t2": 8.0
+  },
+  {
+   "sectors": "s0040-s0040",
+   "offset_arcsec": [
+    -1.5540402,
+    -0.9474585
+   ],
+   "err_arcsec": [
+    2.506408,
+    2.7079816
+   ],
+   "sigma_from_target": 0.7,
+   "sigma_from_t2": 7.4
+  },
+  {
+   "sectors": "s0041-s0041",
+   "offset_arcsec": [
+    -0.252907,
+    -1.7091963
+   ],
+   "err_arcsec": [
+    2.5056381,
+    2.634104
+   ],
+   "sigma_from_target": 0.7,
+   "sigma_from_t2": 7.1
+  },
+  {
+   "sectors": "s0053-s0053",
+   "offset_arcsec": [
+    0.020030037,
+    -0.92481375
+   ],
+   "err_arcsec": [
+    2.5038104,
+    2.6261141
+   ],
+   "sigma_from_target": 0.4,
+   "sigma_from_t2": 6.9
+  },
+  {
+   "sectors": "s0074-s0074",
+   "offset_arcsec": [
+    7.0185337,
+    10.381761
+   ],
+   "err_arcsec": [
+    2.5014803,
+    2.5542164
+   ],
+   "sigma_from_target": 4.9,
+   "sigma_from_t2": 3.5
+  }
+ ],
+ "triceratops": {
+  "fpp_gemini": {
+   "curves": "gemini",
+   "background": "gaia-dr3",
+   "seeds": 5,
+   "N": 1000000,
+   "FPP_max": 4.6817527830089745e-06,
+   "NFPP_max": 1.0602281166935156e-15,
+   "scenario_range": {
+    "TP": [
+     0.9380775079884772,
+     0.9740921337322522
+    ],
+    "PTP": [
+     0.025592501743653028,
+     0.06146822615134401
+    ],
+    "STP": [
+     1.4719471778515122e-16,
+     4.681752778525942e-06
+    ],
+    "DTP": [
+     0.00031536433421775194,
+     0.0005894181200249902
+    ]
+   }
+  },
+  "fpp_main": {
+   "curves": "all",
+   "background": "gaia-dr3",
+   "seeds": 5,
+   "N": 1000000,
+   "FPP_max": 4.734488703195261e-06,
+   "NFPP_max": 1.0709701156139516e-15,
+   "scenario_range": {
+    "TP": [
+     0.9456775092245006,
+     0.9754538801627977
+    ],
+    "PTP": [
+     0.024325478815841788,
+     0.05387482865885235
+    ],
+    "STP": [
+     1.4774468771751671e-16,
+     4.734488702121174e-06
+    ],
+    "DTP": [
+     0.00021185838557853174,
+     0.0004476621166458179
+    ]
+   }
+  },
+  "fpp_nocurves": {
+   "curves": "none",
+   "background": "gaia-dr3",
+   "seeds": 3,
+   "N": 1000000,
+   "FPP_max": 0.0002573875007001458,
+   "NFPP_max": 9.92840288124222e-16,
+   "scenario_range": {
+    "TP": [
+     0.8592812313729551,
+     0.8975061340551046
+    ],
+    "PTP": [
+     0.10117662138959771,
+     0.13871725196679063
+    ],
+    "STP": [
+     6.582605495044951e-16,
+     0.0002572235499693682
+    ],
+    "DTP": [
+     0.0010598570545975016,
+     0.002001516660253718
+    ]
+   }
+  },
+  "fpp_trilegal": {
+   "curves": "all",
+   "background": "trilegal-frozen",
+   "seeds": 3,
+   "N": 1000000,
+   "FPP_max": 1.6413914671886687e-10,
+   "NFPP_max": 5.102668381002206e-15,
+   "scenario_range": {
+    "TP": [
+     0.945347994023515,
+     0.9753048623352447
+    ],
+    "PTP": [
+     0.024321762668844945,
+     0.05385605632386455
+    ],
+    "DTP": [
+     0.00037337499233273437,
+     0.0007959496321836096
+    ]
+   }
+  }
+ }
+}
