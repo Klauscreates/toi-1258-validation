@@ -7,10 +7,8 @@ title: "TOI-1258.01 | Transit Validation"
 authors:
   - family-names: "Stoloff"
     given-names: "Nikolai Klaus"
-version: 0.3.1
-license:
-  - MIT
-  - CC-BY-4.0
+version: 0.3.2
+license: MIT
 abstract: "Reproducible evidence checks for the TOI-1258.01 statistical-validation analysis."
 keywords:
   - astronomy

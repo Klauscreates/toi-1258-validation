@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.2 - 2026-10-26
+
+- Added `.zenodo.json` so Zenodo can archive releases. Zenodo could not load the
+  two-license list in `CITATION.cff` (v0.3.1 archiving failed), so `CITATION.cff`
+  now lists MIT. The CC BY 4.0 terms for docs and derived data are unchanged
+  (see LICENSE_NOTICE.md).
+
 ## 0.3.1 - 2026-10-26
 
 - Licensing: original code is MIT ([LICENSE](LICENSE)). Original documentation
