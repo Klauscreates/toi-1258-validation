@@ -1,0 +1,23 @@
+{
+  "upload_type": "software",
+  "title": "TOI-1258 b statistical validation: analysis code, inputs and results",
+  "version": "0.3.2",
+  "creators": [
+    {
+      "name": "Stoloff, Nikolai Klaus",
+      "affiliation": "Independent Researcher"
+    }
+  ],
+  "description": "Reproducible analysis for the statistical validation of TOI-1258.01 (TIC 288132261) as the planet TOI-1258 b. Includes the TESS transit fit with posterior samples, odd/even and secondary-eclipse checks, depth-versus-aperture and difference-image centroid tests, and TRICERATOPS false-positive analysis with corrected Gemini/'Alopeke contrast curves. Original code is licensed MIT; original documentation and derived result tables are licensed CC BY 4.0; third-party data (TESS, Gaia, ExoFOP follow-up) keep their own terms (see LICENSE_NOTICE.md). Statistical validation is not a mass measurement.",
+  "license": "MIT",
+  "keywords": [
+    "exoplanets",
+    "TESS",
+    "TOI-1258",
+    "statistical validation",
+    "TRICERATOPS",
+    "transit photometry",
+    "reproducibility"
+  ],
+  "access_right": "open"
+}
